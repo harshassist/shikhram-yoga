@@ -49,3 +49,10 @@
 .path-grid .path-corporate:hover{background-image:url('assets/path-corporate.webp')}
 .path-grid .path-retreat:hover{background-image:url('assets/path-retreat.webp')}
 .path-grid .path-shop:hover{background-image:url('assets/path-shop.webp')}
+
+/* Responsive brand lockup: transparent emblem + readable wordmark. */
+.site-header .brand{display:inline-flex;align-items:center;gap:.65rem;min-width:190px;width:auto;height:64px;overflow:visible;border-radius:0}
+.site-header .brand img{width:54px;height:54px;object-fit:contain;object-position:center;filter:drop-shadow(0 3px 12px rgba(0,0,0,.22))}
+.site-header .brand span{font:400 1.45rem/1 var(--serif);letter-spacing:-.03em;white-space:nowrap;text-shadow:0 2px 14px rgba(0,0,0,.3)}
+.site-header .brand em{color:var(--gold2);font-weight:400}
+@media(max-width:680px){.site-header .brand{min-width:0;height:52px;gap:.45rem}.site-header .brand img{width:44px;height:44px}.site-header .brand span{font-size:1.08rem}}
