@@ -17,15 +17,6 @@ document.querySelectorAll('.product button').forEach((button) => {
   });
 });
 
-document.querySelectorAll('.product-grid .price-row button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const counter = document.querySelector('.icon-button span');
-    if (counter) counter.textContent = Number(counter.textContent) + 1;
-    button.textContent = '✓';
-    setTimeout(() => button.textContent = '+', 1200);
-  });
-});
-
 document.querySelectorAll('.filter-button').forEach((button) => {
   button.addEventListener('click', () => {
     document.querySelectorAll('.filter-button').forEach(item => item.classList.remove('active'));
