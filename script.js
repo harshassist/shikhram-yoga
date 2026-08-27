@@ -58,7 +58,6 @@ if (!reduceMotion && window.gsap && window.ScrollTrigger) {
     if (targets.length) gsap.from(targets, {y:42, opacity:0, stagger:.09, duration:.9, ease:'power2.out', scrollTrigger:{trigger:section, start:'top 78%', once:true}});
   });
 
-  gsap.from('.path-card', {y:60, opacity:0, stagger:.1, duration:.9, scrollTrigger:{trigger:'.path-grid', start:'top 80%', once:true}});
   gsap.from('.practice-card', {x:60, opacity:0, stagger:.08, duration:.9, scrollTrigger:{trigger:'.practice-track', start:'top 78%', once:true}});
   gsap.from('.teacher-card', {y:70, opacity:0, stagger:.12, duration:.9, scrollTrigger:{trigger:'.teacher-grid', start:'top 80%', once:true}});
   gsap.from('.product', {y:60, opacity:0, stagger:.14, duration:.9, scrollTrigger:{trigger:'.products', start:'top 80%', once:true}});
