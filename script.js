@@ -17,10 +17,39 @@ document.querySelectorAll('.product button').forEach((button) => {
   });
 });
 
+document.querySelectorAll('.product-grid .price-row button').forEach((button) => {
+  button.addEventListener('click', () => {
+    const counter = document.querySelector('.icon-button span');
+    if (counter) counter.textContent = Number(counter.textContent) + 1;
+    button.textContent = '✓';
+    setTimeout(() => button.textContent = '+', 1200);
+  });
+});
+
+document.querySelectorAll('.filter-button').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.filter-button').forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    const filter = button.dataset.filter;
+    document.querySelectorAll('.filter-item').forEach(item => {
+      const tags = (item.dataset.tags || '').split(' ');
+      item.hidden = filter !== 'all' && !tags.includes(filter);
+    });
+  });
+});
+
 document.querySelector('footer form')?.addEventListener('submit', (event) => {
   event.preventDefault();
   const button = event.currentTarget.querySelector('button');
   button.textContent = '✓';
+});
+
+document.querySelectorAll('.enquiry-panel form').forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const button = form.querySelector('button');
+    button.textContent = 'Request received ✓';
+  });
 });
 
 if (!reduceMotion && window.gsap && window.ScrollTrigger) {
