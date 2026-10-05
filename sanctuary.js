@@ -43,6 +43,23 @@
      -------------------------------------------------------------------------- */
   const pacerContainer = document.querySelector('#breath-pacer');
   if (pacerContainer) {
+    if (!pacerContainer.hasAttribute('role')) {
+      pacerContainer.setAttribute('role', 'region');
+    }
+    if (!pacerContainer.hasAttribute('aria-label')) {
+      pacerContainer.setAttribute('aria-label', 'Interactive Pranayama Breathwork Practice');
+    }
+
+    let liveAnnouncer = pacerContainer.querySelector('#pacer-announcer');
+    if (!liveAnnouncer) {
+      liveAnnouncer = document.createElement('div');
+      liveAnnouncer.id = 'pacer-announcer';
+      liveAnnouncer.className = 'sr-only';
+      liveAnnouncer.setAttribute('aria-live', 'polite');
+      liveAnnouncer.setAttribute('aria-atomic', 'true');
+      pacerContainer.appendChild(liveAnnouncer);
+    }
+
     const orb = pacerContainer.querySelector('.pacer-orb');
     const phaseText = pacerContainer.querySelector('.pacer-phase-text');
     const timerText = pacerContainer.querySelector('.pacer-timer-text');
@@ -93,7 +110,12 @@
       timerText.textContent = `${secondsLeft}s`;
       orb.style.transition = `transform ${cur.duration}s cubic-bezier(0.4, 0, 0.2, 1)`;
       orb.style.transform = `scale(${cur.scale})`;
-      if (isRunning) playSoftChime(cur.freq, 1.2);
+      if (isRunning) {
+        playSoftChime(cur.freq, 1.2);
+        if (liveAnnouncer) {
+          liveAnnouncer.textContent = `${cur.name} phase, ${cur.duration} seconds`;
+        }
+      }
     }
 
     function tick() {
