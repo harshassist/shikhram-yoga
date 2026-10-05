@@ -1,0 +1,95 @@
+.booking-pilot form{display:grid;gap:1rem}.booking-pilot label,.owner-page label{display:grid;gap:.5rem;font-size:.85rem}.booking-pilot input,.booking-pilot select,.booking-pilot textarea,.owner-page input,.owner-page select,.owner-page textarea{font:inherit;font-size:16px;width:100%;padding:.8rem;border:1px solid #b9a88f;background:#fff9ef;color:#302a22;border-radius:4px}.booking-pilot input[type=checkbox],.owner-page input[type=checkbox]{width:auto;justify-self:start}.booking-pilot details{padding:1rem 0}.booking-pilot summary{cursor:pointer}.booking-pilot .button{margin-top:.6rem}.booking-pilot .cart-items article{gap:1rem}.booking-pilot small{display:block}.booking-pilot .cart-items input{max-width:90px}.flow-error{color:#8a2d1d;padding:1rem;border:1px solid currentColor}.booking-pilot :focus-visible,.owner-page :focus-visible{outline:2px solid #a87925;outline-offset:3px}.owner-page{background:#f5ecdf;color:#302a22}.owner-page main{max-width:1100px;margin:auto;padding:3rem 1.5rem}.owner-page h1{font:400 clamp(2.5rem,5vw,4.5rem) var(--serif,Georgia)}.owner-page h2{font:400 2.6rem var(--serif,Georgia);margin:3rem 0 1rem}.owner-page h3{font:400 1.6rem var(--serif,Georgia)}.owner-page em{color:#a87925}.owner-page p{margin:1rem 0;line-height:1.6}.owner-toolbar{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0;align-items:center}.owner-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}.owner-stats article{border:1px solid #cdbc9f;background:#fffaf3;border-radius:4px;padding:1.2rem}.owner-request{border:1px solid #cdbc9f;background:#fffcf8;border-radius:6px;padding:1.5rem;margin:1.2rem 0;box-shadow:0 4px 12px rgba(25,18,12,0.03)}.owner-stats strong{display:block;font:400 2.2rem var(--serif,Georgia);color:#2b231a}.owner-stats span{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:#7b6f60;display:block;margin-top:.3rem}.owner-editor{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}.owner-editor .full{grid-column:1/-1}.owner-editor textarea{min-height:100px}.owner-page #owner-login{max-width:500px;margin-top:2rem}.owner-page [hidden]{display:none!important}#owner-message{color:#744b0f;font-weight:500;margin:1rem 0}.owner-request small{overflow-wrap:anywhere}.owner-request p{overflow-wrap:anywhere}.request-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:.8rem}.status-badge{display:inline-block;padding:.25rem .65rem;border-radius:99px;font-size:.72rem;font-weight:600;text-transform:capitalize;letter-spacing:.02em}.badge-confirmed,.badge-fulfilled{background:#e6f4ea;color:#137333;border:1px solid #ceead6}.badge-requested,.badge-new{background:#fef7e0;color:#b06000;border:1px solid #feefc3}.badge-contacted,.badge-waitlist{background:#e8f0fe;color:#1967d2;border:1px solid #d2e3fc}.badge-cancelled{background:#fce8e6;color:#c5221f;border:1px solid #fad2cf}.customer-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0}.action-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .75rem;font-size:.75rem;text-decoration:none;border-radius:4px;transition:opacity .15s ease,transform .15s ease;font-weight:500}.action-btn:hover{opacity:.9;transform:translateY(-1px)}.btn-whatsapp{background:#25d366;color:#fff!important}.btn-email{background:#2b231a;color:#fff!important}.btn-call{background:#efe3d3;color:#302a22!important;border:1px solid #b9a88f}.filter-bar{display:flex;gap:1rem;align-items:flex-end;flex-wrap:wrap;background:#fffaf3;border:1px solid #b9a88f;padding:1rem;border-radius:4px;margin:1.5rem 0}.filter-search-box{flex:2;min-width:220px}.filter-select-box{flex:1;min-width:140px}.export-btn{background:#2b231a;color:#fff;padding:.8rem 1.2rem;border:none;border-radius:4px;cursor:pointer;font-size:.82rem;display:inline-flex;align-items:center;gap:.4rem;transition:background .15s ease}.export-btn:hover{background:#a87925}.btn-delete-offer{background:#8a2d1d!important;color:#fff!important;border:none!important}.btn-delete-offer:hover{background:#b3261e!important}@media(max-width:680px){.owner-stats{grid-template-columns:1fr 1fr}.owner-editor{grid-template-columns:1fr}.booking-pilot h2{font-size:2.3rem}.booking-pilot{padding-bottom:3rem}}
+
+/* Professional Admin Enhancements & Emulator Warning Removal */
+.firebase-emulator-warning {
+  display: none !important;
+}
+.admin-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+  background: #fffcf8;
+  border: 1px solid #cdbc9f;
+  border-radius: 6px;
+  margin: 1.5rem 0 2rem;
+  box-shadow: 0 2px 8px rgba(25,18,12,0.02);
+}
+.system-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  color: #4b3e2f;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.status-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2e7d32;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+.admin-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-ghost-danger {
+  background: transparent;
+  color: #a83232;
+  border: 1px solid #e0b4b4;
+  padding: 0.45rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.btn-ghost-danger:hover {
+  background: #fdf2f2;
+  border-color: #a83232;
+}
+.admin-empty-state {
+  text-align: center;
+  padding: 4.5rem 2rem;
+  background: #fffcf8;
+  border: 1px solid #cdbc9f;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(25, 18, 12, 0.02);
+}
+.empty-icon-ring {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  background: #fbf4ea;
+  border: 1px solid #e2d3be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #a87925;
+}
+.admin-empty-state h3 {
+  font: 400 1.8rem var(--serif, Georgia);
+  color: #2b231a;
+  margin: 0 0 0.6rem;
+}
+.admin-empty-state p {
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  color: #6b5e50;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.admin-empty-state .button {
+  display: inline-flex;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,11 @@
+.data/
+__pycache__/
+.env
+node_modules/
+*-debug.log
+.firebase/
+.DS_Store
+**/.DS_Store
+.serena/
+*.backup.*
+video/

@@ -5,27 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f4ecdf" />
   <title>Shikhram Yoga — The Path to the Highest Self</title>
-  <meta name="description" content="Authentic yoga, transformative retreats, corporate wellness and conscious essentials." />
+  <meta name="description" content="Yoga beyond the mat. Founder-led yoga, breathwork, sound and retreats for private lives, workplaces and remarkable places." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="sanctuary.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<!--brand-head-->
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shikhram Yoga — The Path to the Highest Self">
+<meta property="og:description" content="Yoga beyond the mat. Founder-led yoga, breathwork, sound and retreats for private lives, workplaces and remarkable places.">
+<meta property="og:image" content="assets/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Shikhram Yoga home">
-      <img src="assets/shikhram-logo.png" alt="Shikhram Yoga" />
+    <a class="brand" href="index.html" aria-label="Shikhram Yoga home">
+      <img class="brand-lockup" src="assets/brand/logo-lockup-cream.png" alt="Shikhram Yoga — The Path to the Highest Self"><img class="brand-mark" src="assets/brand/logo-mark-cream.png" alt="" aria-hidden="true">
     </a>
     <nav aria-label="Primary navigation">
-      <a href="#practice">Practice</a>
-      <a href="sound-healing.html">Sound</a>
-      <a href="corporate.html">Corporate</a>
-      <a href="retreats.html">Retreats</a>
+      <a href="story.html">Our Story</a>
+      <a href="for-you.html">For You</a>
       <a href="teachers.html">Teachers</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="retreats.html">Retreats</a>
+      <a href="corporate.html">For Teams</a>
+      <a href="partnerships.html">Partnerships</a>
       <a href="shop.html">Shop</a>
+      <a href="blog.html">Blog</a>
     </nav>
     <div class="header-actions">
       <button class="icon-button" aria-label="Open shopping bag">Bag <span>0</span></button>
@@ -40,9 +57,9 @@
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="sun-orbit" aria-hidden="true"><span></span></div>
       <div class="hero-content">
-        <p class="eyebrow reveal">Ancient practice · Modern life</p>
+        <p class="eyebrow reveal">Yoga beyond the mat · Life beyond the routine</p>
         <h1 class="reveal">Rise to your<br><em>highest self.</em></h1>
-        <p class="hero-copy reveal">Authentic yoga, trusted teachers, transformative retreats and consciously chosen essentials.</p>
+        <p class="hero-copy reveal">Founder-led yoga, breathwork, sound and transformational retreats — for your private life, your team and remarkable places.</p>
         <div class="hero-actions reveal">
           <a class="button" href="#practice">Begin your journey</a>
           <a class="text-link" href="#retreats">Explore retreats <span>↗</span></a>
@@ -53,60 +70,140 @@
     </section>
 
     <section class="proof-strip" aria-label="Shikhram Yoga credentials">
-      <p><strong>10+</strong><span>Years guiding practice</span></p>
-      <p><strong>2,000+</strong><span>Sessions facilitated</span></p>
-      <p><strong>25+</strong><span>Teams and communities</span></p>
-      <p><strong>RYT</strong><span>Certified instruction</span></p>
-      <small>Illustrative figures · replace with client-confirmed facts</small>
+      <p><strong>Founder-led</strong><span>Guided personally by Aniket</span></p>
+      <p><strong>Decade+</strong><span>Of lived practice</span></p>
+      <p><strong>Traditional</strong><span>Hatha · Ashtanga · Breath · Sound</span></p>
+      <p><strong>Contemporary</strong><span>Designed for modern life</span></p>
     </section>
 
     <section class="intro" id="pathways">
-      <p class="eyebrow">One path. Many ways to walk it.</p>
+      <p class="eyebrow">Choose your path</p>
       <h2>Wellness, shaped around <em>your world.</em></h2>
       <div class="path-grid">
-        <a class="path-card path-image path-practice" href="#practice">
+        <a class="path-card path-image path-practice" href="for-you.html">
           <span class="path-number">01</span><div class="path-icon">◌</div>
-          <h3>Practice Yoga</h3><p>Explore traditional disciplines and find a practice that meets you where you are.</p><b>Explore practices →</b>
+          <h3>For You</h3><p>Private yoga, sound and personal practice — one-to-one, at home, online or in small groups.</p><b>Begin your practice →</b>
         </a>
         <a class="path-card path-image path-corporate" href="corporate.html">
           <span class="path-number">02</span><div class="path-icon">⌁</div>
-          <h3>Corporate Wellness</h3><p>Thoughtful programs that bring focus, energy and connection into the workplace.</p><b>For organisations →</b>
+          <h3>For Teams</h3><p>Workplace wellbeing that brings focus, energy and connection to your people.</p><b>Explore for teams →</b>
         </a>
         <a class="path-card path-image path-retreat" href="retreats.html">
           <span class="path-number">03</span><div class="path-icon">△</div>
-          <h3>Retreat Within</h3><p>Immersive journeys in remarkable places, guided by trusted practitioners.</p><b>View retreats →</b>
+          <h3>Retreats &amp; Partnerships</h3><p>Transformational journeys — and retreat design for properties, hotels and teachers.</p><b>Explore retreats →</b>
         </a>
         <a class="path-card path-image path-shop" href="shop.html">
           <span class="path-number">04</span><div class="path-icon">✦</div>
-          <h3>Live Consciously</h3><p>Tools, objects and rituals selected to support a more mindful everyday life.</p><b>Visit the shop →</b>
+          <h3>The Shikhram Edit</h3><p>A small, considered selection of objects and rituals for a more mindful everyday.</p><b>Visit the edit →</b>
         </a>
       </div>
     </section>
-
     <section class="founder-section" id="founder">
-      <div class="founder-mark" aria-hidden="true"><span>शिखरम्</span></div>
+      <div class="founder-mark"><img src="assets/aniket-founder.png" alt="Aniket, founder and lead teacher of Shikhram Yoga" width="800" height="800" loading="lazy"></div>
       <div class="founder-copy">
-        <p class="eyebrow">Founder and lead teacher</p>
+        <p class="eyebrow">Aniket · Founder &amp; lead teacher</p>
         <h2>A practice rooted in tradition, taught for <em>real life.</em></h2>
-        <p class="founder-lead">“Yoga is not only about flexibility or postures. It is a way to reconnect—with your breath, your body, your mind and ultimately, yourself.”</p>
-        <p>Shikhram brings classical practice into modern lives with warmth, clarity and respect for its roots. Each session is designed to meet the student where they are and guide them forward with intention.</p>
-        <div class="credential-row"><span>Hatha Yoga</span><span>Ashtanga</span><span>Breathwork</span><span>Meditation</span></div>
-        <a class="text-link" href="teachers.html">Meet the teacher <span>→</span></a>
+        <p class="founder-lead">“Yoga is more than what happens in a class. It is the way we breathe when life becomes difficult, and the moments when we become quiet enough to listen to ourselves.”</p>
+        <p>A decade and more of lived practice in yoga, breathwork, meditation and sound healing is the foundation of Shikhram Yoga. Aniket personally shapes each experience — for individuals, families, teams and the properties we partner with.</p>
+        <div class="credential-row"><span>Hatha Yoga</span><span>Ashtanga</span><span>Breathwork</span><span>Sound Healing</span></div>
+        <a class="text-link" href="story.html">Read Aniket's story <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="pacer-container" id="breath-pacer">
+      <div class="pacer-shell">
+        <div class="pacer-copy">
+          <p class="eyebrow">Interactive Breath Sanctuary</p>
+          <h2>Pause for a moment of <em>stillness.</em></h2>
+          <p>Pranayama is the deliberate expansion of vital life force through conscious breath. Choose a rhythm and let the visual pacer steady your nervous system before practice.</p>
+          <div class="pacer-modes">
+            <button class="pacer-mode-btn active" data-pattern="box" type="button">Sama Vritti · Box 4-4-4-4</button>
+            <button class="pacer-mode-btn" data-pattern="calm" type="button">Pranayama · Calm 4-7-8</button>
+            <button class="pacer-mode-btn" data-pattern="energy" type="button">Awakening · 3-3-3</button>
+          </div>
+          <div class="pacer-controls">
+            <button class="pacer-toggle-btn" type="button">Begin practice</button>
+            <span class="pacer-cycle-count">Begin when ready</span>
+          </div>
+        </div>
+        <div class="pacer-stage">
+          <div class="pacer-rings">
+            <div class="pacer-outer-ring"></div>
+            <div class="pacer-pulse-halo"></div>
+            <div class="pacer-orb">
+              <div class="pacer-data">
+                <p class="pacer-phase-text">Inhale</p>
+                <div class="pacer-timer-text">4s</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="practice-section" id="practice">
       <div class="section-heading">
         <div><p class="eyebrow">The practice</p><h2>Find your <em>flow.</em></h2></div>
-        <p>Every path begins differently. Explore six traditions guided with clarity, care and respect for their roots.</p>
+        <div>
+          <p>Every path begins differently. Explore six traditions guided with clarity, care and respect for their roots.</p>
+          <button class="quiz-banner-btn quiz-trigger" type="button">✦ Find your practice match in 45 seconds →</button>
+        </div>
       </div>
       <div class="practice-track">
-        <article class="practice-card"><span>01</span><h3>Hatha</h3><p>Stability in every step</p><small>Grounding · All levels</small></article>
-        <article class="practice-card"><span>02</span><h3>Ashtanga</h3><p>Discipline for a stronger you</p><small>Dynamic · Intermediate</small></article>
-        <article class="practice-card"><span>03</span><h3>Yin</h3><p>Stillness for deeper awareness</p><small>Restorative · All levels</small></article>
-        <article class="practice-card"><span>04</span><h3>Vinyasa</h3><p>Flow for life's journey</p><small>Energising · Mixed levels</small></article>
-        <a class="practice-card" href="sound-healing.html"><span>05</span><h3>Sound</h3><p>Vibrations for inner peace</p><small>Enter the sound sanctuary →</small></a>
-        <article class="practice-card"><span>06</span><h3>Breathwork</h3><p>Breathe · Be present · Live better</p><small>Mindful · All levels</small></article>
+        <article class="practice-card">
+          <img class="practice-card-bg" src="assets/practice-hatha.jpg" alt="Hatha yoga practice" loading="lazy">
+          <span>01</span>
+          <div class="practice-card-content">
+            <h3>Hatha</h3>
+            <p>Stability in every step</p>
+            <small>Grounding · All levels</small>
+          </div>
+        </article>
+        <article class="practice-card">
+          <img class="practice-card-bg" src="assets/practice-ashtanga.jpg" alt="Ashtanga yoga practice" loading="lazy">
+          <span>02</span>
+          <div class="practice-card-content">
+            <h3>Ashtanga</h3>
+            <p>Discipline for a stronger you</p>
+            <small>Dynamic · Intermediate</small>
+          </div>
+        </article>
+        <article class="practice-card">
+          <img class="practice-card-bg" src="assets/practice-yin.jpg" alt="Yin yoga practice" loading="lazy">
+          <span>03</span>
+          <div class="practice-card-content">
+            <h3>Yin</h3>
+            <p>Stillness for deeper awareness</p>
+            <small>Restorative · All levels</small>
+          </div>
+        </article>
+        <article class="practice-card">
+          <img class="practice-card-bg" src="assets/practice-vinyasa.jpg" alt="Vinyasa yoga practice" loading="lazy">
+          <span>04</span>
+          <div class="practice-card-content">
+            <h3>Vinyasa</h3>
+            <p>Flow for life's journey</p>
+            <small>Energising · Mixed levels</small>
+          </div>
+        </article>
+        <a class="practice-card" href="sound-healing.html">
+          <img class="practice-card-bg" src="assets/practice-sound.jpg" alt="Sound healing meditation" loading="lazy">
+          <span>05</span>
+          <div class="practice-card-content">
+            <h3>Sound</h3>
+            <p>Vibrations for inner peace</p>
+            <small>Enter the sound sanctuary →</small>
+          </div>
+        </a>
+        <article class="practice-card">
+          <img class="practice-card-bg" src="assets/practice-breathwork.jpg" alt="Pranayama breathwork practice" loading="lazy">
+          <span>06</span>
+          <div class="practice-card-content">
+            <h3>Breathwork</h3>
+            <p>Breathe · Be present · Live better</p>
+            <small>Mindful · All levels</small>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -121,16 +218,11 @@
         <p>Calmer minds.<br>Healthier teams.<br>Brighter tomorrows.</p>
       </div>
       <div class="corporate-copy">
-        <p class="eyebrow">Wellness at work</p>
+        <p class="eyebrow">For Teams</p>
         <h2>Bring balance into the <em>workday.</em></h2>
-        <p>Custom yoga, breathwork and mindfulness programs for teams—delivered at your office, online or as a restorative off-site.</p>
-        <ol>
-          <li><span>01</span><div><b>Tell us what your team needs</b><small>Share your goals, team size and preferred format.</small></div></li>
-          <li><span>02</span><div><b>Receive a tailored program</b><small>We design a plan around your people and culture.</small></div></li>
-          <li><span>03</span><div><b>Begin the transformation</b><small>Trusted teachers deliver and track the experience.</small></div></li>
-        </ol>
-        <div class="package-chips"><span>One-time reset</span><span>Recurring program</span><span>Leadership retreat</span></div>
-        <a class="button" href="corporate.html">View corporate programs</a>
+        <p>Custom yoga, breathwork, mindfulness and sound experiences for teams — delivered at your office, online or as a restorative off-site. One contact, a clear proposal, a tailored program.</p>
+        <div class="package-chips"><span>Team Reset · one-time</span><span>Monthly rhythm</span><span>Sound bath</span><span>Leadership retreat</span></div>
+        <a class="button" href="corporate.html">Explore For Teams</a>
       </div>
     </section>
 
@@ -140,7 +232,7 @@
         <p class="eyebrow">Featured retreat · Rishikesh</p>
         <h2>Return to the<br><em>source.</em></h2>
         <p>Six days of movement, stillness and self-discovery where the mountains meet the sacred river.</p>
-        <div class="retreat-meta"><span>18–23 Oct 2026<small>Six days</small></span><span>12 places<small>Intimate group</small></span><span>From ₹42,000<small>Stay included</small></span></div>
+        <div class="retreat-meta"><span>Himalayas<small>Mountain sanctuary</small></span><span>Intimate group<small>Attentive guidance</small></span><span>Holistic stay<small>Nourishment included</small></span></div>
         <a class="button button-light" href="retreats.html">Discover the retreat</a>
       </div>
     </section>
@@ -148,40 +240,74 @@
     <section class="retreat-listing-preview">
       <div class="section-heading"><div><p class="eyebrow">Upcoming journeys</p><h2>Choose your <em>return.</em></h2></div><a class="text-link" href="retreats.html">View all retreats <span>→</span></a></div>
       <div class="retreat-card-grid">
-        <a class="retreat-card retreat-rishikesh" href="retreats.html#rishikesh"><span class="status-pill">6 places left</span><div><small>Rishikesh · 18–23 Oct 2026</small><h3>Return to the Source</h3><p>6 days · From ₹42,000</p></div></a>
-        <a class="retreat-card retreat-sahyadri" href="retreats.html#sahyadri"><span class="status-pill">New</span><div><small>Sahyadri · 12–14 Dec 2026</small><h3>Stillness in the Hills</h3><p>3 days · From ₹18,500</p></div></a>
-        <a class="retreat-card retreat-goa" href="retreats.html#goa"><span class="status-pill">Waitlist</span><div><small>South Goa · 06–09 Feb 2027</small><h3>Breath by the Sea</h3><p>4 days · From ₹32,000</p></div></a>
+        <a class="retreat-card retreat-rishikesh" href="retreats.html#rishikesh"><span class="status-pill">Mountain Sanctuary</span><div><small>Rishikesh · Sacred Ganga</small><h3>Return to the Source</h3><p>Hatha · Breathwork · Silence</p></div></a>
+        <a class="retreat-card retreat-sahyadri" href="retreats.html#sahyadri"><span class="status-pill">Forest Sanctuary</span><div><small>Sahyadri · Western Ghats</small><h3>Stillness in the Hills</h3><p>Yin · Restorative nature immersion</p></div></a>
+        <a class="retreat-card retreat-goa" href="retreats.html#goa"><span class="status-pill">Coastal Sanctuary</span><div><small>South Goa · Arabian Sea</small><h3>Breath by the Sea</h3><p>Vinyasa · Tidal meditation · Sound</p></div></a>
       </div>
+    </section>
+
+    <section class="sound-invitation" id="partnerships" style="background:radial-gradient(circle at 75% 50%,#3a4232 0,#2b2a22 42%,#1a1712 82%)">
+      <div><p class="eyebrow">For properties &amp; retreat leaders</p><h2>Beautiful places, meaningful <em>experiences.</em></h2><p>Own a remarkable property, or lead a community without the machinery to run a retreat? Shikhram designs, programmes and hosts the whole experience — end to end.</p><a class="button button-light" href="partnerships.html">Explore partnerships</a></div>
+      <div class="sound-rings" aria-hidden="true"><i></i><i></i><i></i><b>△</b></div>
     </section>
 
     <section class="teachers-section" id="teachers">
       <div class="section-heading">
         <div><p class="eyebrow">The guides</p><h2>Meet your <em>teacher.</em></h2></div>
-        <p>Learn from experienced teachers selected for depth of practice, warmth and integrity.</p>
       </div>
       <div class="teacher-grid">
-        <article class="teacher-card"><div class="teacher-portrait portrait-one"><span>SY</span></div><div><small>Hatha · Breathwork</small><h3>Shikhram</h3><p>Pune · Online & in person</p><p class="availability">● Available this week</p><a href="teachers.html#shikhram">View profile ↗</a></div></article>
-        <article class="teacher-card"><div class="teacher-portrait portrait-two"><span>AM</span></div><div><small>Vinyasa · Meditation</small><h3>Aarohi Mehta</h3><p>Mumbai · Online</p><p class="availability">● Next: Tuesday</p><a href="teachers.html#aarohi">View profile ↗</a></div></article>
-        <article class="teacher-card"><div class="teacher-portrait portrait-three"><span>RK</span></div><div><small>Ashtanga · Yin</small><h3>Rohan Kulkarni</h3><p>Bengaluru · In person</p><p class="availability">● Next: Thursday</p><a href="teachers.html#rohan">View profile ↗</a></div></article>
+        <article class="teacher-card"><div class="teacher-portrait"><img src="assets/aniket-founder.png" alt="Aniket — Founder &amp; Lead Yoga Guide" width="600" height="600" loading="lazy"></div><div><small>Hatha · Breathwork</small><h3>Aniket</h3><p>Pune · Online &amp; in person</p><p class="availability">● Available this week</p><a href="teachers.html#shikhram">View profile ↗</a></div></article>
+        <article class="teacher-card"><div class="teacher-portrait"><img src="assets/teacher-deepak.jpg" alt="Deepak — Yoga Guide &amp; Meditation Coach" width="600" height="600" loading="lazy"></div><div><small>Hatha · Ashtanga · Breathwork</small><h3>Deepak</h3><p>India &amp; UAE · Online &amp; Private</p><p class="availability">● Available this week</p><a href="teachers.html#deepak">View profile ↗</a></div></article>
+        <article class="teacher-card"><div class="teacher-portrait"><img src="assets/kavita-nutritionist.png" alt="Kavita — Sports, Maternity &amp; Child Nutritionist" width="600" height="600" loading="lazy"></div><div><small>Sports · Maternity · Dietetics</small><h3>Kavita</h3><p>Pune &amp; Online · Personalized Plans</p><p class="availability">● Available this week</p><a href="teachers.html#kavita">View profile ↗</a></div></article>
+        <article class="teacher-card"><div class="teacher-portrait"><img src="assets/preeti-dietitian.png" alt="Preeti — Dietitian · Lifestyle &amp; Weight Management" width="600" height="600" loading="lazy"></div><div><small>Lifestyle · Weight · Metabolic Care</small><h3>Preeti</h3><p>Pune &amp; Online · Diet Consultations</p><p class="availability">● Available this week</p><a href="teachers.html#preeti">View profile ↗</a></div></article>
       </div>
       <a class="text-link centered" href="teachers.html">Find your teacher <span>→</span></a>
     </section>
 
     <section class="shop-section" id="shop">
-      <div class="shop-copy"><p class="eyebrow">The mindful shop</p><h2>Objects for a more<br><em>conscious life.</em></h2><p>The same trusted tools used by our teachers and retreats—selected for honest materials, lasting utility and everyday ritual.</p><div class="shop-categories"><span>Practice</span><span>Ritual</span><span>Recovery</span><span>Gifts</span></div><a class="button" href="shop.html">Explore the collection</a></div>
-      <div class="products">
-        <article class="product"><div class="product-art mat"><i></i></div><span>Practice</span><h3>Natural Cork Mat</h3><p>₹4,200 <button aria-label="Add Natural Cork Mat to bag">+</button></p></article>
-        <article class="product"><div class="product-art bowl"><i></i></div><span>Ritual</span><h3>Hand-beaten Singing Bowl</h3><p>₹2,800 <button aria-label="Add Singing Bowl to bag">+</button></p></article>
+      <div class="shop-copy"><p class="eyebrow">The Shikhram Edit</p><h2>A small edit for a more<br><em>conscious life.</em></h2><p>Not a store — a short, considered edit of the tools our teachers and retreats actually use, chosen for honest materials and everyday ritual.</p><div class="shop-categories"><span>Practice</span><span>Ritual</span><span>Recovery</span><span>Gifts</span></div><a class="button" href="shop.html">Explore the edit</a></div>
+      <div class="product-grid">
+        <article class="product"><div class="product-frame"><img src="assets/product-cork-mat.jpg" alt="Natural Cork &amp; Rubber Mat" width="600" height="600" loading="lazy"></div><small>Practice</small><h3>Natural Cork &amp; Rubber Mat</h3><p>High-density Portuguese cork with raw rubber base.</p><div class="price-row"><b>₹3,800</b><button type="button">Add to bag</button></div></article>
+        <article class="product"><div class="product-frame"><img src="assets/product-singing-bowl.jpg" alt="Hand-Hammered Singing Bowl" width="600" height="600" loading="lazy"></div><small>Ritual</small><h3>Hand-Hammered Singing Bowl</h3><p>Seven-metal bronze alloy crafted in Nepal with rosewood striker.</p><div class="price-row"><b>₹4,200</b><button type="button">Add to bag</button></div></article>
+        <article class="product"><div class="product-frame"><img src="assets/product-cushion.jpg" alt="Buckwheat Meditation Zafu" width="600" height="600" loading="lazy"></div><small>Comfort</small><h3>Buckwheat Meditation Zafu</h3><p>Organic cotton twill filled with cleaned Indian buckwheat hulls.</p><div class="price-row"><b>₹2,200</b><button type="button">Add to bag</button></div></article>
       </div>
     </section>
 
-    <section class="testimonials-section">
-      <div class="section-heading"><div><p class="eyebrow">Real impact · Real people</p><h2>What stays <em>after practice.</em></h2></div><p>Stories from individual students, retreat guests and teams. Replace these examples with verified client words before launch.</p></div>
-      <div class="testimonial-grid">
-        <blockquote><div class="stars">★★★★★</div><p>“The sessions gave me a practice I could actually sustain—not another routine I would abandon after a week.”</p><footer><b>Private student</b><span>Pune</span></footer></blockquote>
-        <blockquote><div class="stars">★★★★★</div><p>“Thoughtfully planned, accessible for every level, and one of the few wellbeing sessions our entire team asked to repeat.”</p><footer><b>People & Culture Lead</b><span>Technology team</span></footer></blockquote>
-        <blockquote><div class="stars">★★★★★</div><p>“The retreat balanced structure and space beautifully. I came home rested, grounded and clear.”</p><footer><b>Retreat guest</b><span>Rishikesh</span></footer></blockquote>
+    <section class="testimonials-section proof-invitation">
+      <p class="eyebrow">Built through real relationships</p>
+      <h2>Experiences designed to stay <em>with you.</em></h2>
+      <p>Shikhram is built one practice, team and retreat at a time. Verified stories, moments of stillness, and shared journeys guided personally by Aniket and our master teachers.</p>
+      <div class="authentic-moments-grid">
+        <article class="moment-card">
+          <img src="assets/aniket-student-connection.webp" alt="Founder Aniket and student sharing gratitude after a dedicated practice in front of Om sun mosaic" loading="lazy">
+          <div class="moment-caption">
+            <small>Personal Guidance</small>
+            <h4>Teacher &amp; Student Sanctuary</h4>
+          </div>
+        </article>
+        <article class="moment-card">
+          <img src="assets/aniket-summit-meditation.webp" alt="A reflective mountain moment during a Shikhram journey" loading="lazy">
+          <div class="moment-caption">
+            <small>Mountain Practice</small>
+            <h4>Return to Perspective</h4>
+          </div>
+        </article>
+        <article class="moment-card">
+          <img src="assets/retreat-community-hike.webp" alt="Joyful retreat community exploring alpine trails and mountain valleys with Aniket" loading="lazy">
+          <div class="moment-caption">
+            <small>Retreat Sangha</small>
+            <h4>Trails Beyond the Mat</h4>
+          </div>
+        </article>
+        <article class="moment-card">
+          <img src="assets/aniket-corporate-session.webp" alt="Aniket leading a corporate team mindfulness and posture alignment session outdoors" loading="lazy">
+          <div class="moment-caption">
+            <small>Executive Wellness</small>
+            <h4>Presence for Teams</h4>
+          </div>
+        </article>
       </div>
+      <a class="text-link" href="mailto:aniket@shikhramyoga.com?subject=Share%20my%20Shikhram%20experience">Share your experience <span>→</span></a>
     </section>
 
     <section class="closing">
@@ -192,15 +318,18 @@
   </main>
 
   <footer>
-    <div class="footer-brand"><img src="assets/shikhram-logo.png" alt="Shikhram Yoga"><p>Traditional wisdom for a calmer mind, healthier body and brighter tomorrow.</p></div>
-    <div><b>Explore</b><a href="#practice">Practice</a><a href="sound-healing.html">Sound healing</a><a href="retreats.html">Retreats</a><a href="teachers.html">Teachers</a><a href="shop.html">Shop</a></div>
-    <div><b>Connect</b><a href="corporate.html">Corporate wellness</a><a href="mailto:hello@shikhramyoga.com">Contact</a><a href="#">Instagram</a><a href="#">WhatsApp</a></div>
-    <div class="newsletter"><b>Notes from the summit</b><p>Seasonal practices, retreat news and thoughtful rituals.</p><form><label class="sr-only" for="email">Email address</label><input id="email" type="email" placeholder="Your email address"><button type="submit" aria-label="Subscribe">→</button></form></div>
-    <p class="copyright">© 2026 Shikhram Yoga · Pune, India</p>
-  </footer>
+<div class="footer-brand"><img src="assets/brand/logo-lockup-cream.png" alt="Shikhram Yoga" width="270" height="74" loading="lazy"><p>Yoga beyond the mat. Life beyond the routine.</p></div>
+<div><b>Explore</b><a href="for-you.html">For You</a><a href="teachers.html">Teachers</a><a href="nutrition.html">Nutrition</a><a href="retreats.html">Retreats</a><a href="corporate.html">For Teams</a><a href="partnerships.html">Partnerships</a><a href="shop.html">Shop</a></div>
+<div><b>Connect</b><a href="story.html">Our Story</a><a href="blog.html">Blog</a><a href="sound-healing.html">Sound healing</a><a href="mailto:aniket@shikhramyoga.com">Contact</a><a href="https://wa.me/917977381156?text=Hi%2C%20I%20would%20like%20to%20connect%20with%20Shikhram%20Yoga" target="_blank" rel="noopener">WhatsApp</a></div>
+<div><b>Trust &amp; Safety</b><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="fraud-alert.html">Fraud Alert</a><a href="#lookup" class="lookup-trigger" style="color:#e1ba6b">Check booking status ↗</a></div>
+<div class="newsletter"><b>Notes from the summit</b><p>Seasonal practices, retreat news and thoughtful rituals.</p><form><label class="sr-only" for="footer-email">Email address</label><input id="footer-email" type="email" placeholder="Your email address"><button type="submit" aria-label="Subscribe">→</button></form></div>
+<p class="copyright"><span>© 2026 Shikhram Yoga · Pune, India</span><span class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><span class="sep" aria-hidden="true">·</span><a href="terms-and-conditions.html">Terms &amp; Conditions</a><span class="sep" aria-hidden="true">·</span><a href="fraud-alert.html">Fraud Alert</a></span></p>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260927"></script>
+  <script src="flows.js?v=20260927"></script>
+  <script src="sanctuary.js"></script>
 </body>
 </html>

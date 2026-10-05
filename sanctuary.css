@@ -1,0 +1,607 @@
+/* ==========================================================================
+   Shikhram Yoga — Sanctuary Features Stylesheet
+   Breathwork Pacer, Sound Tuning, Practice Quiz, Booking Lookup, Retreat Timeline
+   ========================================================================== */
+
+:root {
+  --sanctuary-gold: #c89b4b;
+  --sanctuary-gold-light: #e8ca87;
+  --sanctuary-gold-dark: #8c6729;
+  --sanctuary-bg-card: #f9f3ea;
+  --sanctuary-ink: #231d17;
+  --sanctuary-muted: #736756;
+  --sanctuary-line: rgba(168, 121, 37, 0.22);
+}
+
+/* --------------------------------------------------------------------------
+   1. Interactive Pranayama Breathwork Pacer
+   -------------------------------------------------------------------------- */
+.pacer-container {
+  padding: 6rem 5vw;
+  background: #f4ecdf;
+  border-top: 1px solid var(--sanctuary-line);
+  border-bottom: 1px solid var(--sanctuary-line);
+  position: relative;
+  overflow: hidden;
+}
+
+.pacer-shell {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.pacer-copy h2 {
+  font: 400 clamp(2.4rem, 4vw, 3.6rem)/1.1 var(--serif, 'Italiana', serif);
+  margin: 0.8rem 0 1.2rem;
+  color: var(--sanctuary-ink);
+}
+
+.pacer-copy p {
+  color: var(--sanctuary-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.pacer-modes {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.pacer-mode-btn {
+  background: transparent;
+  border: 1px solid var(--sanctuary-line);
+  border-radius: 99px;
+  padding: 0.55rem 1.1rem;
+  font: 500 0.72rem/1 var(--sans, 'DM Sans', sans-serif);
+  color: var(--sanctuary-ink);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.04em;
+}
+
+.pacer-mode-btn:hover {
+  border-color: var(--sanctuary-gold);
+  background: rgba(200, 155, 75, 0.08);
+}
+
+.pacer-mode-btn.active {
+  background: #302a22;
+  color: #f7efe3;
+  border-color: #302a22;
+}
+
+.pacer-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pacer-rings {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.pacer-outer-ring {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 1px dashed var(--sanctuary-line);
+  position: absolute;
+}
+
+.pacer-orb {
+  width: 45%;
+  height: 45%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ebcc80 0%, #b38235 60%, #6e4817 100%);
+  box-shadow: 0 0 50px rgba(200, 155, 75, 0.35);
+  display: grid;
+  place-items: center;
+  transition: transform 1s ease-in-out;
+  transform: scale(0.65);
+  position: relative;
+  z-index: 2;
+}
+
+.pacer-pulse-halo {
+  position: absolute;
+  inset: -15%;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 155, 75, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.pacer-active .pacer-pulse-halo {
+  opacity: 1;
+}
+
+.pacer-data {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.pacer-phase-text {
+  font: 400 1.2rem var(--serif, 'Italiana', serif);
+  letter-spacing: 0.06em;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.pacer-timer-text {
+  font: 600 1.8rem/1 var(--sans, 'DM Sans', sans-serif);
+  margin-top: 0.2rem;
+  opacity: 0.95;
+}
+
+.pacer-controls {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pacer-toggle-btn {
+  background: var(--sanctuary-gold);
+  color: #fff;
+  border: 0;
+  border-radius: 99px;
+  padding: 0.8rem 1.8rem;
+  font: 600 0.8rem var(--sans, 'DM Sans', sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(200, 155, 75, 0.28);
+}
+
+.pacer-toggle-btn:hover {
+  background: var(--sanctuary-gold-dark);
+  transform: translateY(-2px);
+}
+
+.pacer-cycle-count {
+  font-size: 0.76rem;
+  color: var(--sanctuary-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   2. Ambient Sound Sanctuary Controls (sound-healing.html)
+   -------------------------------------------------------------------------- */
+.sound-tuning-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+  position: relative;
+  z-index: 5;
+  max-width: 520px;
+  width: 100%;
+}
+
+.freq-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(226, 185, 101, 0.3);
+  border-radius: 99px;
+  color: #dfd2c0;
+  padding: 0.5rem 1rem;
+  font: 500 0.68rem/1 var(--sans, 'DM Sans', sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.freq-btn:hover {
+  border-color: #ebcc80;
+  color: #fff;
+}
+
+.freq-btn.active {
+  background: rgba(200, 155, 75, 0.25);
+  border-color: #ebcc80;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(235, 204, 128, 0.3);
+}
+
+.drone-toggle-btn {
+  background: transparent;
+  border: 1px solid rgba(226, 185, 101, 0.4);
+  border-radius: 99px;
+  color: #eed6aa;
+  padding: 0.5rem 1.1rem;
+  font: 500 0.68rem/1 var(--sans, 'DM Sans', sans-serif);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.06em;
+}
+
+.drone-toggle-btn:hover {
+  background: rgba(226, 185, 101, 0.12);
+  color: #fff;
+}
+
+.drone-toggle-btn.active {
+  background: #c89b4b;
+  color: #fff;
+  border-color: #c89b4b;
+}
+
+.drone-wave {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.drone-toggle-btn.active .drone-wave {
+  animation: dronePulse 1.6s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes dronePulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   3. "Find Your Practice" Guided Recommendation Modal
+   -------------------------------------------------------------------------- */
+.quiz-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #302a22;
+  color: #f7efe3;
+  padding: 0.85rem 1.6rem;
+  border-radius: 99px;
+  border: 1px solid rgba(200, 155, 75, 0.4);
+  font: 500 0.76rem var(--sans, 'DM Sans', sans-serif);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 1.2rem;
+  text-decoration: none;
+}
+
+.quiz-banner-btn:hover {
+  background: var(--sanctuary-gold);
+  color: #fff;
+  border-color: var(--sanctuary-gold);
+  transform: translateY(-2px);
+}
+
+.quiz-dialog {
+  width: min(720px, 94vw);
+  max-height: 90vh;
+  padding: 0;
+  border: 0;
+  background: #faf4eb;
+  color: var(--sanctuary-ink);
+  box-shadow: 0 25px 80px rgba(20, 15, 10, 0.45);
+  border-radius: 4px;
+}
+
+.quiz-dialog::backdrop {
+  background: rgba(20, 16, 12, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.quiz-shell {
+  padding: 2.5rem 2.8rem;
+  position: relative;
+}
+
+.quiz-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: transparent;
+  border: 0;
+  font-size: 1.6rem;
+  color: var(--sanctuary-muted);
+  cursor: pointer;
+}
+
+.quiz-step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.quiz-step-indicator span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.68rem;
+  border: 1px solid var(--sanctuary-line);
+  color: var(--sanctuary-muted);
+}
+
+.quiz-step-indicator span.active {
+  background: #302a22;
+  color: #fff;
+  border-color: #302a22;
+}
+
+.quiz-step-indicator i {
+  flex: 1;
+  height: 1px;
+  background: var(--sanctuary-line);
+}
+
+.quiz-option-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.quiz-option {
+  padding: 1.1rem 1.3rem;
+  background: #fff;
+  border: 1px solid var(--sanctuary-line);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.quiz-option:hover {
+  border-color: var(--sanctuary-gold);
+  background: #fdfbf7;
+  transform: translateX(4px);
+}
+
+.quiz-option b {
+  display: block;
+  font: 500 0.95rem var(--sans, 'DM Sans', sans-serif);
+  color: var(--sanctuary-ink);
+}
+
+.quiz-option small {
+  display: block;
+  color: var(--sanctuary-muted);
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+.quiz-option span.quiz-arrow {
+  color: var(--sanctuary-gold);
+  font-size: 1.1rem;
+}
+
+.quiz-result-card {
+  background: #302a22;
+  color: #f7efe3;
+  padding: 2rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+}
+
+.quiz-result-card h3 {
+  font: 400 2.2rem var(--serif, 'Italiana', serif);
+  margin: 0.5rem 0 1rem;
+  color: #fff;
+}
+
+.quiz-result-card p {
+  color: #c9bcaa;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.quiz-result-card .price-row {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Client Self-Service: Booking Status Lookup & Calendar Sync
+   -------------------------------------------------------------------------- */
+.lookup-dialog {
+  width: min(580px, 94vw);
+  max-height: 90vh;
+  padding: 0;
+  border: 0;
+  background: #f9f4ec;
+  color: var(--sanctuary-ink);
+  box-shadow: 0 25px 80px rgba(20, 15, 10, 0.45);
+  border-radius: 4px;
+}
+
+.lookup-dialog::backdrop {
+  background: rgba(20, 16, 12, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.lookup-shell {
+  padding: 2.2rem;
+  position: relative;
+}
+
+.lookup-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.lookup-record {
+  margin-top: 1.8rem;
+  border-top: 1px solid var(--sanctuary-line);
+  padding-top: 1.5rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  font: 600 0.65rem/1 var(--sans, 'DM Sans', sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+}
+
+.status-badge.requested,
+.status-badge.new {
+  background: #e8dcc8;
+  color: #57462c;
+}
+
+.status-badge.confirmed,
+.status-badge.test_reserved {
+  background: #5d6f51;
+  color: #fff;
+}
+
+.calendar-sync-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
+.cal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #302a22;
+  border-radius: 4px;
+  font: 500 0.72rem var(--sans, 'DM Sans', sans-serif);
+  color: #302a22;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cal-btn:hover {
+  background: #302a22;
+  color: #fff;
+}
+
+@media(max-width: 680px) {
+  .pacer-shell {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Authentic Practice Moments Gallery
+   -------------------------------------------------------------------------- */
+.authentic-moments-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  max-width: 1280px;
+  margin: 3rem auto 2.5rem;
+  padding: 0 1rem;
+}
+
+.moment-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  background: #fdfaf5;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  aspect-ratio: 4 / 5;
+}
+
+.moment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.moment-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.moment-card:hover img {
+  transform: scale(1.04);
+}
+
+.moment-caption {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  padding: 2rem 1.1rem 1rem;
+  background: linear-gradient(to top, rgba(20, 16, 12, 0.88) 0%, rgba(20, 16, 12, 0.45) 60%, transparent 100%);
+  color: #fff;
+  text-align: left;
+}
+
+.moment-caption small {
+  display: block;
+  font: 500 0.58rem var(--sans, 'DM Sans', sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sanctuary-gold-light);
+  margin-bottom: 0.25rem;
+}
+
+.moment-caption h4 {
+  font: 400 1.05rem/1.2 var(--serif, 'Italiana', serif);
+  margin: 0;
+  color: #f7f1e6;
+}
+
+@media(max-width: 900px) {
+  .authentic-moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media(max-width: 520px) {
+  .authentic-moments-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+

@@ -1,0 +1,20 @@
+{
+  "name": "shikhram-functions",
+  "version": "1.0.0",
+  "description": "Trusted backend functions for Shikhram Yoga",
+  "main": "index.js",
+  "scripts": {
+    "start": "firebase emulators:start",
+    "test": "node --test ../tests/emulator.test.js"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.2.0",
+    "firebase-functions": "^5.0.1"
+  },
+  "private": true
+}

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "shikhram-yoga",
+    "dev": "shikhram-yoga-dev"
+  }
+}

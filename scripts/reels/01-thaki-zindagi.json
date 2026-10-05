@@ -1,0 +1,65 @@
+{
+  "title": "Thaki Hui Zindagi",
+  "brand": "Shikharam Yoga",
+  "voice_id": "hi-IN-MadhurNeural",
+  "rate": "+2%",
+  "pitch": "-1Hz",
+  "ambient_track": "432hz_tibetan_bell",
+  "scenes": [
+    {
+      "id": "scene1",
+      "eyebrow": "THE URBAN REALITY",
+      "headline": "थकी हुई ज़िंदगी...",
+      "body": "भागती हुई सांसें, लगातार तनाव और बर्नआउट। क्या आप भी अंदर से एक गहरा ठहराव ढूंढ रहे हैं?",
+      "spoken_text": "थकी हुई ज़िंदगी, भागती हुई सांसें... क्या आप भी रोज़ के तनाव में खुद को खो चुके हैं?",
+      "icon": "◌",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene2",
+      "eyebrow": "A SANCTUARY FOR EVERY SEEKER",
+      "headline": "शिखरम् कौन आता है?",
+      "spoken_text": "शिखरम् में आपका स्वागत है। यहां आते हैं बर्नआउट से थके प्रोफेश्नल्स, बेचैन मन वाले साधक, और वो जो खुद को फिर से तलाशना चाहते हैं।",
+      "cards": [
+        {
+          "num": "01",
+          "title": "थके हुए प्रोफेशनल्स",
+          "desc": "जो कॉर्पोरेट भागदौड़ और मानसिक थकान से शांति चाहते हैं।"
+        },
+        {
+          "num": "02",
+          "title": "बेचैन मन वाले साधक",
+          "desc": "जिन्हें अनिद्रा, तनाव और आंतरिक बेचैनी से मुक्ति चाहिए।"
+        },
+        {
+          "num": "03",
+          "title": "खुद को तलाशने वाले",
+          "desc": "जो योग को चटाई से आगे, आत्म-साक्षात्कार बनाना चाहते हैं।"
+        }
+      ],
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene3",
+      "eyebrow": "TRANSFORMATION & HEALING",
+      "headline": "ठहरिए। सांस लीजिए।",
+      "body": "प्रामाणिक हठ योग · नाद साउंड हीलिंग · हिमालयन रिट्रीट",
+      "footer_tag": "GUIDED PERSONALLY BY ANIKET",
+      "spoken_text": "थोड़ा ठहरिए, और एक गहरी सांस लीजिए। प्रामाणिक हठ योग, नाद हीलिंग और हिमालयन रिट्रीट।",
+      "bg_image": "retreat-rishikesh.webp",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene4",
+      "eyebrow": "ROZ KI BHAGDAUD SE...",
+      "headline": "भीतर के शिखर तक।",
+      "body": "Rise to your highest self. व्यक्तिगत सत्र · कॉर्पोरेट वेलनेस · ट्रांसफॉर्मेशन रिट्रीट",
+      "cta_text": "अपनी यात्रा शुरू करें →",
+      "footer_url": "shikhram.com · Pune · Rishikesh",
+      "spoken_text": "शिखरम् योग। रोज़ की भागदौड़ से, अपने भीतर के शिखर तक। आज ही अपनी यात्रा शुरू करें।",
+      "is_finale": true,
+      "logo_image": "shikhram-logo-transparent.png",
+      "pause_after_seconds": 1.2
+    }
+  ]
+}

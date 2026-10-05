@@ -1,0 +1,64 @@
+{
+  "title": "Preeti - Lifestyle & Weight Management",
+  "brand": "Shikharam Yoga & Nutrition",
+  "voice_id": "hi-IN-SwaraNeural",
+  "rate": "+2%",
+  "pitch": "+0Hz",
+  "ambient_track": "432hz_tibetan_bell",
+  "scenes": [
+    {
+      "id": "scene1",
+      "eyebrow": "HEALTHIER RELATIONSHIP WITH FOOD",
+      "headline": "डाइट जो सज़ा नहीं, सेहत बने...",
+      "body": "Personalized, sustainable nutrition tailored to your lifestyle, body, and daily routine.",
+      "spoken_text": "क्या आप भी सोचते हैं कि वज़न कम करने के लिए भूखा रहना पड़ता है? एक अच्छी डाइट खाना छोड़ने के बारे में नहीं, सही पोषण को अपनी रोज़मर्रा की ज़िंदगी का हिस्सा बनाने के बारे में है।",
+      "icon": "✦",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene2",
+      "eyebrow": "LIFESTYLE & WEIGHT MANAGEMENT",
+      "headline": "आपकी सेहत, आपके पसंदीदा खाने के साथ",
+      "spoken_text": "सस्टेनेबल वेट मैनेजमेंट, हेल्दी वेट गेन, और थायरॉइड, पीसीओडी या डायबिटीज़ जैसी कंडीशन्स के लिए प्रैक्टिकल और एविडेंस-बेस्ड न्यूट्रिशन सपोर्ट।",
+      "cards": [
+        {
+          "num": "01",
+          "title": "Weight Management",
+          "desc": "सस्टेनेबल वेट लॉस और हेल्दी वेट गेन — बिना पसंदीदा खाने को पूरी तरह छोड़े।"
+        },
+        {
+          "num": "02",
+          "title": "Hormonal Balance",
+          "desc": "PCOS और थायरॉइड डिसऑर्डर्स के लिए पर्सनलाइज़्ड लाइफस्टाइल डाइट।"
+        },
+        {
+          "num": "03",
+          "title": "Metabolic Care",
+          "desc": "डायबिटीज़, हाइपरटेंशन और हाई कोलेस्ट्रॉल का साइंटिफिक न्यूट्रिशन मैनेजमेंट।"
+        }
+      ],
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene3",
+      "eyebrow": "OUR PRACTICAL APPROACH",
+      "headline": "डाइट आपकी ज़िंदगी के लिए...",
+      "body": "Diet Counseling · Delicious Healthy Recipes · Shikhram WhatsApp Support · Regular Follow-ups",
+      "footer_tag": "PLANS START FROM ₹3,000 / MONTH",
+      "spoken_text": "हमारा अप्रोच जल्दबाज़ी नहीं, बल्कि आपकी एनर्जी, ईटिंग हैबिट्स और लॉन्ग-टर्म हेल्थ को बेहतर बनाने पर केंद्रित है।",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene4",
+      "eyebrow": "MEET YOUR DIETITIAN",
+      "headline": "Preeti",
+      "body": "Dietitian · Lifestyle & Weight Management · Shikhram Yoga",
+      "cta_text": "कंसल्टेशन बुक करें →",
+      "footer_url": "shikhramyoga.com/nutrition",
+      "spoken_text": "डाइटिशियन प्रीति के साथ आज ही शुरुआत करें। हेल्दी ईटिंग को अपनी ज़िंदगी में फिट करें, न कि ज़िंदगी को डाइट पर कुर्बान। विज़िट करें शिखराम योगा डॉट कॉम।",
+      "is_finale": true,
+      "logo_image": "preeti-dietitian.png",
+      "pause_after_seconds": 1.2
+    }
+  ]
+}

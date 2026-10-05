@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Shikhram · Owner Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=30260919_clean">
+  <link rel="stylesheet" href="pilot.css?v=20260919_clean">
+</head>
+<body class="owner-page">
+  <main>
+    <a href="index.html">← View website</a>
+    <p class="eyebrow">Shikhram Yoga · Owner Workspace</p>
+    <h1>Make room for <em>wellness.</em></h1>
+    <p>Manage bookings, team proposals, partnership enquiries, retreats and shop orders.</p>
+
+    <!-- Firebase Authentication Form -->
+    <form id="owner-login">
+      <h2 id="auth-mode-title" style="margin-top:0">Sign in as owner</h2>
+      <label>
+        Owner email
+        <input type="email" name="email" required autocomplete="username" placeholder="aniket@shikhramyoga.com">
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••••••" minlength="6">
+      </label>
+      <button class="button" type="submit" id="auth-submit-btn">Sign in</button>
+      <div style="margin-top:1rem">
+        <button class="text-link" type="button" id="auth-toggle-btn">First time? Create owner account</button>
+      </div>
+      <p class="inline-trust">Restricted to Shikhram Yoga administrators.</p>
+    </form>
+
+    <p id="owner-message" role="status"></p>
+
+    <!-- Authenticated Owner Section -->
+    <section id="owner-content" hidden>
+      <div class="admin-top-bar">
+        <div class="system-status">
+          <span class="status-indicator-dot"></span>
+          <span>Sanctuary Operations · Connected</span>
+        </div>
+        <div class="admin-top-actions">
+          <button class="button button-small" id="owner-refresh" type="button">⟳ Refresh</button>
+          <button class="btn-ghost-danger" id="owner-clear-records" type="button" title="Clear all enquiry and booking requests">Clear Database 🗑</button>
+          <button class="text-link" id="owner-logout" type="button">Sign out →</button>
+        </div>
+      </div>
+
+      <div id="owner-stats" class="owner-stats"></div>
+
+      <h2>Requests & <em>enquiries.</em></h2>
+      <div class="filter-bar" role="search" aria-label="Filter bookings and enquiries">
+        <label class="filter-search-box">
+          Search requests
+          <input type="search" id="request-search" placeholder="Search by name, email, phone, ref ID, item..." autocomplete="off">
+        </label>
+        <label class="filter-select-box">
+          Type
+          <select id="request-filter">
+            <option value="all">All types</option>
+            <option value="session">Classes &amp; sound</option>
+            <option value="corporate">For Teams (Corporate wellness)</option>
+            <option value="partnership">Partnerships (Hotels &amp; Retreat Leaders)</option>
+            <option value="shop">Shop orders</option>
+            <option value="waitlist">Waitlist</option>
+            <option value="match">Enquiries &amp; matches</option>
+<option value="newsletter">Newsletter sign-ups</option>
+            <option value="retreat">Retreats (if any)</option>
+          </select>
+        </label>
+        <label class="filter-select-box">
+          Status
+          <select id="status-filter">
+            <option value="all">All statuses</option>
+            <option value="requested">Pending / Requested</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="new">New leads</option>
+            <option value="contacted">Contacted</option>
+            <option value="fulfilled">Fulfilled</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </label>
+        <div style="display:flex;align-items:center;gap:.75rem;margin-top:auto">
+          <span id="request-count" style="font-size:.78rem;color:#7b6f60;font-weight:500"></span>
+          <button class="export-btn" id="btn-export-csv" type="button" title="Export filtered records to CSV">Export CSV ↓</button>
+        </div>
+      </div>
+      <div id="owner-requests"></div>
+    </section>
+  </main>
+
+  <!-- Firebase App, Auth & Firestore SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="admin.js?v=20260927"></script>
+</body>
+</html>

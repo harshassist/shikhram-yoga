@@ -1,0 +1,66 @@
+{
+  "title": "Himalayan Rishikesh Retreat",
+  "brand": "Shikharam Yoga",
+  "voice_id": "hi-IN-MadhurNeural",
+  "rate": "+2%",
+  "pitch": "-1Hz",
+  "ambient_track": "432hz_tibetan_bell",
+  "scenes": [
+    {
+      "id": "scene1",
+      "eyebrow": "HIMALAYAN SANCTUARY",
+      "headline": "गंगा किनारे, मौन और शांति...",
+      "body": "जब शहर का शोर बहुत ज़्यादा हो जाए, तो पहाड़ों की गोद में लौट आइए।",
+      "spoken_text": "गंगा किनारे, मौन और शांति। जब शहर का शोर बहुत ज़्यादा हो जाए, तो पहाड़ों की गोद में लौट आइए।",
+      "icon": "△",
+      "bg_image": "retreat-rishikesh.webp",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene2",
+      "eyebrow": "THE 5-DAY IMMERSION",
+      "headline": "ऋषिकेश रिट्रीट में क्या होगा?",
+      "spoken_text": "ऋषिकेश रिट्रीट में क्या अनुभव करेंगे? सुबह का हठ योग, गंगा तट पर प्राणायाम, और शाम को नाद ध्वनि स्नान।",
+      "cards": [
+        {
+          "num": "01",
+          "title": "प्रातः हठ व अष्टांग योग",
+          "desc": "पवित्र गंगा के तट पर अनिकेत द्वारा व्यक्तिगत मार्गदर्शन।"
+        },
+        {
+          "num": "02",
+          "title": "तिब्बती नाद ध्वनि स्नान",
+          "desc": "गहरे ध्यान और आंतरिक तनाव मुक्ति के लिए 432Hz ध्वनि।"
+        },
+        {
+          "num": "03",
+          "title": "सात्विक भोजन व मौन भ्रमण",
+          "desc": "शरीर का विषहरण और मन का शांत पुनर्जन्म।"
+        }
+      ],
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene3",
+      "eyebrow": "LIMITED TO 12 PARTICIPANTS",
+      "headline": "केवल 12 स्थान उपलब्ध।",
+      "body": "एक अंतरंग, गहरा और जीवन बदलने वाला 5 दिवसीय आध्यात्मिक अनुभव।",
+      "footer_tag": "RISHIKESH · OCTOBER 2026",
+      "spoken_text": "केवल बारह साधकों के लिए। एक अंतरंग और गहरा परिवर्तनकारी अनुभव।",
+      "bg_image": "retreat-rishikesh.webp",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene4",
+      "eyebrow": "RETURN TO THE SOURCE",
+      "headline": "शिखरम् रिट्रीट",
+      "body": "अपनी सीट आज ही सुरक्षित करें। shikhram.com/retreats",
+      "cta_text": "रिट्रीट विवरण देखें →",
+      "footer_url": "shikhram.com/retreats · @shikhramyoga",
+      "spoken_text": "शिखरम् योग रिट्रीट। अपने मूल की ओर लौटें। आज ही अपना स्थान सुरक्षित करें।",
+      "is_finale": true,
+      "logo_image": "shikhram-logo-transparent.png",
+      "pause_after_seconds": 1.2
+    }
+  ]
+}

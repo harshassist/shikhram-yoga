@@ -1,0 +1,18 @@
+{
+  "name": "shikhram-yoga",
+  "version": "1.0.0",
+  "description": "Shikhram Yoga Firebase Website & Trusted Backend",
+  "scripts": {
+    "emulators": "export JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home && export PATH=\"$JAVA_HOME/bin:$PATH\" && npx -y firebase-tools@latest emulators:start",
+    "migrate": "node scripts/migrate-sqlite.js",
+    "migrate:dry": "node scripts/migrate-sqlite.js --dry-run",
+    "set-admin": "node scripts/set-admin.js",
+    "clear-db": "node scripts/clear-db.js",
+    "test": "node --test tests/emulator.test.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.2.0"
+  },
+  "devDependencies": {},
+  "private": true
+}

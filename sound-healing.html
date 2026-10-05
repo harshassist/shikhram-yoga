@@ -6,19 +6,41 @@
   <meta name="description" content="Live sound meditation with Himalayan singing bowls, gong and chimes at Shikhram Yoga.">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="sanctuary.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<!--brand-head-->
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shikhram Yoga — The Path to the Highest Self">
+<meta property="og:description" content="Yoga beyond the mat. Founder-led yoga, breathwork, sound and retreats for private lives, workplaces and remarkable places.">
+<meta property="og:image" content="assets/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="sound-body">
-  <header class="site-header sound-header"><a class="brand" href="index.html"><img src="assets/shikhram-logo.png" alt="Shikhram Yoga"></a><nav><a href="index.html#practice">Practice</a><a href="sound-healing.html">Sound</a><a href="corporate.html">Corporate</a><a href="retreats.html">Retreats</a><a href="teachers.html">Teachers</a><a href="shop.html">Shop</a></nav><div class="header-actions"><a class="button button-small" href="#sessions">Book a sound session</a><button class="menu-button">Menu</button></div></header>
+  <header class="site-header sound-header"><a class="brand" href="index.html"><img class="brand-lockup" src="assets/brand/logo-lockup-cream.png" alt="Shikhram Yoga — The Path to the Highest Self"><img class="brand-mark" src="assets/brand/logo-mark-cream.png" alt="" aria-hidden="true"></a><nav><a href="story.html">Our Story</a><a href="for-you.html">For You</a><a href="teachers.html">Teachers</a><a href="nutrition.html">Nutrition</a><a href="retreats.html">Retreats</a><a href="corporate.html">For Teams</a><a href="partnerships.html">Partnerships</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a></nav><div class="header-actions"><a class="button button-small" href="#sessions">Book a sound session</a><button class="menu-button">Menu</button></div></header>
 
   <main>
     <section class="sound-hero">
       <div class="ambient-field" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="sound-hero-copy"><p class="eyebrow">Sound healing · Meditation · Deep listening</p><h1>Come home through <em>sound.</em></h1><p>A live, acoustic meditation with Himalayan singing bowls, gong and chimes—held with space, stillness and care.</p><a class="text-link" href="#resonance">Experience the resonance <span>↓</span></a></div>
       <div class="bowl-stage" id="resonance">
-        <div class="resonance-ring ring-one"></div><div class="resonance-ring ring-two"></div><div class="resonance-ring ring-three"></div>
-        <button class="singing-bowl" id="singing-bowl" aria-label="Strike the virtual singing bowl"><span></span></button>
-        <p><b>Strike the bowl</b><small>Sound on · headphones recommended</small></p>
+        <div class="bowl-interactive-zone">
+          <div class="resonance-ring ring-one"></div><div class="resonance-ring ring-two"></div><div class="resonance-ring ring-three"></div>
+          <button class="singing-bowl" id="singing-bowl" aria-label="Strike the virtual singing bowl"><span></span></button>
+        </div>
+        <p class="bowl-instruction"><b>Strike the bowl</b><small>Sound on · headphones recommended</small></p>
+        <div class="sound-tuning-bar">
+          <button class="freq-btn active" data-freq="432" type="button">432 Hz · Grounding</button>
+          <button class="freq-btn" data-freq="528" type="button">528 Hz · Heart Resonance</button>
+          <button class="freq-btn" data-freq="174" type="button">174 Hz · Deep Rest</button>
+          <button class="drone-toggle-btn" id="ambient-drone-btn" type="button"><span class="drone-wave"></span> Continuous Drone: <b class="drone-state">Off</b></button>
+        </div>
       </div>
       <p class="sound-scroll">Live acoustic sound · Never autoplayed</p>
     </section>
@@ -55,10 +77,45 @@
       <div><p>Sound meditation is offered for relaxation and contemplative wellbeing. It does not diagnose, treat or replace professional medical care.</p><p>Please contact us before booking if you are pregnant, have sound sensitivity, epilepsy, a pacemaker or other implanted medical device, or any concern about strong sound and vibration. We can discuss comfort, positioning and whether the session is appropriate.</p></div>
     </section>
 
-    <section class="enquiry-panel sound-enquiry" id="sound-booking"><div><p class="eyebrow">Book a sound experience</p><h2>Make space to <em>listen.</em></h2><p>Choose a session above for the fast scheduling flow, or speak with us directly for help selecting an experience.</p></div><div class="sound-booking-actions"><a class="button" href="#sessions">Choose a sound session</a><a class="button whatsapp-primary" href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20help%20choosing%20a%20sound%20healing%20session." target="_blank" rel="noopener">Book on WhatsApp</a></div></section>
+    <section class="enquiry-panel sound-enquiry" id="sound-booking">
+      <div>
+        <p class="eyebrow">Book a sound experience</p>
+        <h2>Make space to <em>listen.</em></h2>
+        <p>A quiet, acoustic immersion in Himalayan bowls and guided stillness. Tell us your preferred format or questions.</p>
+        <div class="proposal-trust" style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;font-size:0.75rem;color:var(--muted)">
+          <span>Certified sound practitioner</span>
+          <span>Pune sanctuary studio</span>
+          <span>Individual, duo &amp; small groups</span>
+        </div>
+      </div>
+      <form data-flow="sound">
+        <label>Full name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+        <label>Email address<input name="email" type="email" required autocomplete="email" placeholder="you@email.com"></label>
+        <label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel" placeholder="+91 98765 43210"></label>
+        <label>Experience of interest
+          <select name="session">
+            <option>01 · Sound Reset (30 mins · Private or duo)</option>
+            <option>02 · Resonance Journey (60 mins · Small group)</option>
+            <option>03 · Private Sound Ritual (75 mins · Private)</option>
+          </select>
+        </label>
+        <label class="full">Notes or special requests<textarea name="notes" placeholder="Any sound sensitivities, injuries, pregnancy, or questions..."></textarea></label>
+        <button class="button" type="submit">Request a sound session</button>
+      </form>
+    </section>
+
+    <footer>
+<div class="footer-brand"><img src="assets/brand/logo-lockup-cream.png" alt="Shikhram Yoga" width="270" height="74" loading="lazy"><p>Yoga beyond the mat. Life beyond the routine.</p></div>
+<div><b>Explore</b><a href="for-you.html">For You</a><a href="teachers.html">Teachers</a><a href="nutrition.html">Nutrition</a><a href="retreats.html">Retreats</a><a href="corporate.html">For Teams</a><a href="partnerships.html">Partnerships</a><a href="shop.html">Shop</a></div>
+<div><b>Connect</b><a href="story.html">Our Story</a><a href="blog.html">Blog</a><a href="sound-healing.html">Sound healing</a><a href="mailto:aniket@shikhramyoga.com">Contact</a><a href="https://wa.me/917977381156?text=Hi%2C%20I%20would%20like%20to%20connect%20with%20Shikhram%20Yoga" target="_blank" rel="noopener">WhatsApp</a></div>
+<div><b>Trust &amp; Safety</b><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="fraud-alert.html">Fraud Alert</a><a href="#lookup" class="lookup-trigger" style="color:#e1ba6b">Check booking status ↗</a></div>
+<div class="newsletter"><b>Notes from the summit</b><p>Seasonal practices, retreat news and thoughtful rituals.</p><form><label class="sr-only" for="footer-email">Email address</label><input id="footer-email" type="email" placeholder="Your email address"><button type="submit" aria-label="Subscribe">→</button></form></div>
+<p class="copyright"><span>© 2026 Shikhram Yoga · Pune, India</span><span class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><span class="sep" aria-hidden="true">·</span><a href="terms-and-conditions.html">Terms &amp; Conditions</a><span class="sep" aria-hidden="true">·</span><a href="fraud-alert.html">Fraud Alert</a></span></p>
+</footer>
   </main>
-  <script src="script.js"></script>
-  <script src="flows.js"></script>
+  <script src="script.js?v=20260927"></script>
+  <script src="flows.js?v=20260927"></script>
   <script src="sound.js"></script>
+  <script src="sanctuary.js"></script>
 </body>
 </html>

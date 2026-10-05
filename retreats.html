@@ -1,14 +1,269 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yoga Retreats — Shikhram Yoga</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
-<body class="inner-body"><header class="site-header inner-header"><a class="brand" href="index.html"><img src="assets/shikhram-logo.png" alt="Shikhram Yoga"></a><nav><a href="index.html#practice">Practice</a><a href="sound-healing.html">Sound</a><a href="corporate.html">Corporate</a><a href="retreats.html">Retreats</a><a href="teachers.html">Teachers</a><a href="shop.html">Shop</a></nav><div class="header-actions"><a class="button button-small" href="#retreat-list">Explore retreats</a><button class="menu-button">Menu</button></div></header>
-<main class="inner-main"><section class="inner-hero"><div><p class="eyebrow">Journeys with intention</p><h1>Go somewhere that brings you <em>back to yourself.</em></h1></div><p>Small-group retreats with clear dates, honest inclusions and teachers you can know before you travel.</p></section><div class="inner-tools"><button class="filter-button active" data-filter="all">All journeys</button><button class="filter-button" data-filter="mountains">Mountains</button><button class="filter-button" data-filter="weekend">Weekend</button><button class="filter-button" data-filter="available">Available</button></div>
-<section class="retreat-card-grid page-grid" id="retreat-list"><button class="retreat-card retreat-rishikesh filter-item reserve-trigger" data-tags="mountains available" data-retreat="rishikesh" id="rishikesh"><span class="status-pill">6 places left</span><div><small>18–23 Oct 2026 · Rishikesh</small><h3>Return to the Source</h3><p>Hatha · Breathwork · Led by Shikhram · From ₹42,000</p><b>₹8,000 today · Full amount not charged →</b></div></button><button class="retreat-card retreat-sahyadri filter-item reserve-trigger" data-tags="mountains weekend available" data-retreat="sahyadri" id="sahyadri"><span class="status-pill">New</span><div><small>12–14 Dec 2026 · Sahyadri</small><h3>Stillness in the Hills</h3><p>Yin · Silence · Led by Shikhram · From ₹18,500</p><b>₹5,000 today · Full amount not charged →</b></div></button><button class="retreat-card retreat-goa filter-item waitlist-trigger" data-tags="weekend" data-retreat="goa" id="goa"><span class="status-pill">Waitlist</span><div><small>06–09 Feb 2027 · South Goa</small><h3>Breath by the Sea</h3><p>Vinyasa · Meditation · Sound · From ₹32,000</p><b>Join the waitlist · No payment →</b></div></button></section>
-<section class="detail-band"><div><p class="eyebrow">What every journey includes</p><h2>Everything clear before you <em>commit.</em></h2><p>Every retreat page will expose the daily rhythm, accommodation, meals, travel guidance, teacher details, payment schedule and cancellation policy.</p></div><div class="program-list"><article><h3>Practice and guidance</h3><p>Twice-daily movement, breathwork, meditation and teacher support.</p></article><article><h3>Stay and nourishment</h3><p>Accommodation and meals described clearly by room type and dietary options.</p></article><article><h3>Deposit or full payment</h3><p>Reserve a place with a transparent schedule for the remaining balance.</p></article></div></section>
-<section class="booking-principles"><p>Secure reservation · Transparent deposit · Balance reminders · WhatsApp support</p></section></main>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yoga Retreats — Shikhram Yoga</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=3"><link rel="stylesheet" href="sanctuary.css"><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script><!--brand-head-->
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shikhram Yoga — The Path to the Highest Self">
+<meta property="og:description" content="Yoga beyond the mat. Founder-led yoga, breathwork, sound and retreats for private lives, workplaces and remarkable places.">
+<meta property="og:image" content="assets/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="inner-body"><header class="site-header inner-header"><a class="brand" href="index.html"><img class="brand-lockup" src="assets/brand/logo-lockup-cream.png" alt="Shikhram Yoga — The Path to the Highest Self"><img class="brand-mark" src="assets/brand/logo-mark-cream.png" alt="" aria-hidden="true"></a><nav><a href="story.html">Our Story</a><a href="for-you.html">For You</a><a href="teachers.html">Teachers</a><a href="nutrition.html">Nutrition</a><a href="retreats.html" class="active">Retreats</a><a href="corporate.html">For Teams</a><a href="partnerships.html">Partnerships</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a></nav><div class="header-actions"><a class="button button-small" href="#retreat-list">Explore retreats</a><button class="menu-button">Menu</button></div></header>
+<main class="inner-main"><section class="inner-hero"><div><p class="eyebrow">Journeys with intention</p><h1>Go somewhere that brings you <em>back to yourself.</em></h1></div><p>Small-group retreats across India and the world's most serene sanctuaries. Clear dates, honest inclusions, and teachers you can know before you travel.</p></section><div class="inner-tools" aria-label="Retreat search and filters"><div class="tool-search-wrap"><svg class="tool-search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="M12.5 12.5L17 17"></path></svg><input type="search" class="tool-search-input" placeholder="Search retreats by destination, country, or style..." aria-label="Search retreats" autocomplete="off" spellcheck="false"><button type="button" class="tool-search-clear" aria-label="Clear search" hidden>×</button></div><div class="tool-filter-chips"><button class="filter-button active" data-filter="all">All journeys</button><button class="filter-button" data-filter="india">India Sanctuaries</button><button class="filter-button" data-filter="asia">Asia</button><button class="filter-button" data-filter="middle-east">Middle East & Islands</button><button class="filter-button" data-filter="europe-africa">Europe & Africa</button></div><span class="tool-counter" aria-live="polite"></span></div>
+<section class="retreat-card-grid page-grid" id="retreat-list">
+  <!-- India Sanctuaries -->
+  <article class="retreat-card retreat-rishikesh filter-item" data-tags="india uttarakhand rishikesh mountains river sacred hatha breathwork silence available" id="rishikesh">
+    <span class="status-pill">India · Himalayan Sanctuary</span>
+    <div>
+      <small>Rishikesh · Sacred Ganga, Uttarakhand</small>
+      <h3>Return to the Source</h3>
+      <p>Hatha · Pranayama · Silence · Immersive Himalayan living</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Rishikesh · Mountain Sanctuary (Uttarakhand)" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
 
-<dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title"><div class="booking-shell"><button class="booking-close" type="button" aria-label="Close reservation">×</button><aside class="booking-summary"><p class="eyebrow">Your retreat</p><div class="booking-thumb"></div><h2 id="booking-title">Return to the Source</h2><p class="booking-dates">18–23 Oct 2026 · Rishikesh</p><div class="teacher-reassure"><span>SY</span><p>Led by <b>Shikhram</b><small>Hatha · Breathwork</small></p></div><ul><li>5 nights accommodation</li><li>Daily yoga and breathwork</li><li>All vegetarian meals</li><li>Airport transfer assistance</li></ul><div class="booking-trust"><span>6 places left</span><span>Secure payment</span><a href="#">Cancellation policy</a></div></aside><section class="booking-workflow"><div class="booking-progress"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div>
-<form id="booking-form"><div class="booking-step active" data-step="1"><p class="eyebrow">Step 1 of 3</p><h3>Choose your stay</h3><label class="choice-card"><input type="radio" name="room" value="Shared twin" data-price="42000" checked><span><b>Shared twin room</b><small>Share with another guest</small></span><strong>₹42,000</strong></label><label class="choice-card"><input type="radio" name="room" value="Private room" data-price="56000"><span><b>Private room</b><small>Your own peaceful space</small></span><strong>₹56,000</strong></label><div class="payment-choice"><label><input type="radio" name="payment" value="deposit" checked> Pay deposit today</label><label><input type="radio" name="payment" value="full"> Pay in full</label></div><div class="price-summary"><span>Due today</span><strong class="due-today">₹8,000</strong><small class="balance-note">Remaining ₹34,000 due by 18 Sep 2026</small></div><button class="button booking-next" type="button">Continue</button></div>
-<div class="booking-step" data-step="2"><p class="eyebrow">Step 2 of 3</p><h3>Who is travelling?</h3><div class="booking-fields"><label>Full name<input name="name" required autocomplete="name"></label><label>Email<input name="email" type="email" required autocomplete="email"></label><label>WhatsApp number<input name="phone" type="tel" required autocomplete="tel"></label><label>Guests<select name="guests"><option>1 guest</option><option>2 guests</option></select></label><label class="full">Dietary or accessibility needs<textarea name="needs"></textarea></label></div><label class="policy-check"><input type="checkbox" required> I have read the cancellation policy and participant terms.</label><div class="step-actions"><button class="text-link booking-back" type="button">← Back</button><button class="button booking-next" type="button">Review reservation</button></div></div>
-<div class="booking-step" data-step="3"><p class="eyebrow">Step 3 of 3</p><h3>Review and reserve</h3><div class="review-card"><p><span>Retreat</span><b class="review-retreat">Return to the Source</b></p><p><span>Room</span><b class="review-room">Shared twin</b></p><p><span>Payment today</span><b class="review-due">₹8,000</b></p></div><div class="reassurance"><b>You will not be charged in this demo.</b><p>In the live system, Razorpay would open after this step and confirm payment before the CMS marks the reservation as paid.</p></div><div class="step-actions"><button class="text-link booking-back" type="button">← Back</button><button class="button" type="submit">Confirm demo reservation</button></div><a class="whatsapp-fallback" href="https://wa.me/919999999999?text=I%20would%20like%20help%20booking%20a%20Shikhram%20Yoga%20retreat" target="_blank" rel="noopener">Prefer help? Continue on WhatsApp ↗</a></div>
-<div class="booking-success" hidden><span class="success-mark">✓</span><p class="eyebrow">Reservation held</p><h3>Your journey has begun.</h3><p>Demo reference <b>SY-RT-2026-018</b></p><p>A real booking would now send email and WhatsApp confirmation, create the guest in the CMS and hold the place pending payment verification.</p><button class="button booking-done" type="button">Done</button></div></form></section></div></dialog>
+  <article class="retreat-card retreat-himachal filter-item" data-tags="india himachal dharamshala parvati mountains alpine ashtanga breathwork clouds available" id="himachal">
+    <span class="status-pill">India · Alpine Sanctuary</span>
+    <div>
+      <small>Dharamshala & Parvati Valley · Himachal Pradesh</small>
+      <h3>High Altitude Prana</h3>
+      <p>Ashtanga · Cedar meditation · High mountain breathwork</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Himachal Pradesh · Alpine Prana Sanctuary" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
 
-<script src="script.js"></script><script src="booking.js"></script><script src="flows.js"></script></body></html>
+  <article class="retreat-card retreat-goa filter-item" data-tags="india goa coastal ocean sea vinyasa tidal sound available" id="goa">
+    <span class="status-pill">India · Coastal Sanctuary</span>
+    <div>
+      <small>South Goa · Arabian Sea</small>
+      <h3>Breath by the Sea</h3>
+      <p>Vinyasa · Tidal meditation · Sunset sound sanctuary</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="South Goa · Coastal Breath Sanctuary" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-kerala filter-item" data-tags="india kerala backwaters alleppey ayurveda panchakarma hatha water stillness available" id="kerala">
+    <span class="status-pill">India · Backwater Sanctuary</span>
+    <div>
+      <small>Alleppey & Kumarakom · Kerala</small>
+      <h3>Ayurvedic Waters & Stillness</h3>
+      <p>Ayurvedic panchakarma · Gentle hatha · Water contemplation</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Kerala · Backwater & Ayurvedic Sanctuary" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-ladakh filter-item" data-tags="india ladakh leh pangong mountains altitude buddhist silence stars available" id="ladakh">
+    <span class="status-pill">India · High Altitude Sanctuary</span>
+    <div>
+      <small>Leh & Pangong Tso · Ladakh</small>
+      <h3>Altitude & Infinite Space</h3>
+      <p>Buddhist philosophy · High-altitude pranayama · Silent stargazing</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Leh-Ladakh & Pangong Lake · Infinite Space Retreat" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-sahyadri filter-item" data-tags="india pune sahyadri western ghats forest hills yin silence weekend available" id="sahyadri">
+    <span class="status-pill">India · Forest Sanctuary</span>
+    <div>
+      <small>Sahyadri · Western Ghats, Maharashtra (near Pune)</small>
+      <h3>Stillness in the Hills</h3>
+      <p>Yin · Restorative silence · Deep nature immersion</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Sahyadri & Pune · Forest Stillness Sanctuary" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <!-- Asia -->
+  <article class="retreat-card retreat-bali filter-item" data-tags="asia bali ubud sidemen jungle shala tropical dharma water cleansing available" id="bali">
+    <span class="status-pill">Asia · Jungle Sanctuary</span>
+    <div>
+      <small>Ubud & Sidemen Valley · Bali, Indonesia</small>
+      <h3>Tropical Dharma & Jungle Shala</h3>
+      <p>Sacred lotus flow · Vinyasa · Balinese water temple ritual</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Bali · Ubud Jungle Dharma Sanctuary" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-nepal filter-item" data-tags="asia nepal annapurna himalayan mountain pokhara nada sound singing bowls dawn available" id="nepal">
+    <span class="status-pill">Asia · Himalayan Sanctuary</span>
+    <div>
+      <small>Annapurna Foothills & Pokhara · Nepal</small>
+      <h3>Himalayan Summit Stillness</h3>
+      <p>Tibetan nada yoga · Handcrafted singing bowls · Monastic dawn sitting</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Nepal · Annapurna Himalayan Summit Retreat" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-thailand filter-item" data-tags="asia thailand vietnam chiang mai mekong rainforest walking mindful herbal available" id="thailand">
+    <span class="status-pill">Asia · Rainforest Sanctuary</span>
+    <div>
+      <small>Chiang Mai & Mekong Highlands · Thailand & Vietnam</small>
+      <h3>Rainforest Serenity & River Mind</h3>
+      <p>Mindful walking · Teakwood shala · Sattvic herbal nourishment</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Thailand & Vietnam · Rainforest Serenity Retreat" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-bhutan filter-item" data-tags="asia bhutan sri lanka paro ella highlands cloud monastery dzong ancient available" id="bhutan">
+    <span class="status-pill">Asia · Cloud Sanctuary</span>
+    <div>
+      <small>Paro Valley & Ella Highlands · Bhutan & Sri Lanka</small>
+      <h3>Sacred Highlands & Cloud Monasteries</h3>
+      <p>Dzong meditation · Tea plantation silent walks · Ancient breathing</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Bhutan & Sri Lanka · Sacred Highlands Sanctuary" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <!-- Middle East & Islands -->
+  <article class="retreat-card retreat-dubai filter-item" data-tags="middle-east dubai oman desert dunes wahiba sand sound bath twilight stars available" id="dubai">
+    <span class="status-pill">Middle East · Desert Sanctuary</span>
+    <div>
+      <small>Wahiba Sands & Al Maha · Oman & Dubai</small>
+      <h3>Desert Dunes & Star Silence</h3>
+      <p>Sunrise dune breathwork · Sound bath oasis · Night horizon stillness</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Dubai & Oman · Desert Dune & Star Silence" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-maldives filter-item" data-tags="middle-east island islands maldives mauritius overwater coral ocean lagoon sunset sound available" id="maldives">
+    <span class="status-pill">Islands · Ocean Sanctuary</span>
+    <div>
+      <small>Baa Atoll & Le Morne · Maldives & Mauritius</small>
+      <h3>Overwater Prana & Turquoise Solitude</h3>
+      <p>Oceanfront alignment · Coral meditation · Sunset sound floating</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Maldives & Mauritius · Ocean Solitude Retreat" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <!-- Europe & Africa -->
+  <article class="retreat-card retreat-greece filter-item" data-tags="europe-africa europe greece portugal santorini sintra mediterranean coastal aegean yin sun available" id="greece">
+    <span class="status-pill">Europe · Mediterranean Sanctuary</span>
+    <div>
+      <small>Santorini Cliffs & Sintra Coast · Greece & Portugal</small>
+      <h3>Aegean Light & Atlantic Breath</h3>
+      <p>Olive grove silence · Cliffside coastal yin · Mediterranean solar alignment</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Greece & Portugal · Aegean Light & Coastal Yin" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-italy filter-item" data-tags="europe-africa europe italy uk tuscany cotswolds rustic villa countryside hatha harvest available" id="italy">
+    <span class="status-pill">Europe · Countryside Villa Sanctuary</span>
+    <div>
+      <small>Val d'Orcia, Tuscany & Cotswolds, UK</small>
+      <h3>Tuscan Stillness & Countryside Solitude</h3>
+      <p>Stone villa meditation · Restorative hatha · Harvest Sattvic living</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Italy & UK · Tuscan Hills & Countryside Solitude" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+
+  <article class="retreat-card retreat-morocco filter-item" data-tags="europe-africa africa morocco atlas mountains kasbah terracotta twilight desert berber available" id="morocco">
+    <span class="status-pill">Africa · Atlas Kasbah Sanctuary</span>
+    <div>
+      <small>High Atlas Mountains & Essaouira · Morocco</small>
+      <h3>Atlas Kasbah & Starlit Silence</h3>
+      <p>Terracotta terrace flow · Desert twilight chanting · Berber herbal baths</p>
+      <a class="button button-small enquiry-trigger" href="#retreat-enquiry" data-destination="Morocco · Atlas Mountain Kasbah Sanctuary" style="margin-top:0.8rem;display:inline-block">Enquire about dates →</a>
+    </div>
+  </article>
+</section>
+
+<div class="editorial-hero-banner" style="margin:3.5rem 0">
+  <img src="assets/aniket-summit-meditation.webp" alt="Shikhram founder Aniket on high Himalayan peak overlooking sunrise clouds" loading="lazy">
+  <div class="editorial-hero-overlay">
+    <span class="article-category-badge" style="position:static;display:inline-block;margin-bottom:1rem">The Shikhram Meaning</span>
+    <h2>At the Summit of Body &amp; Breath</h2>
+    <p>In Sanskrit, “Shikhram” means the highest peak. Our retreats take you away from the noise of routine to high mountain ridges, sacred rivers, and deep stillness — guided step by step by Aniket.</p>
+    <div style="margin-top:1.5rem"><a class="button" href="#retreat-enquiry">Join an upcoming immersion</a></div>
+  </div>
+</div>
+
+<section class="retreat-decision" aria-label="Retreat planning information"><div><p class="eyebrow">Before you travel</p><h2>Know whether this journey is <em>right for you.</em></h2><p>Designed for beginners and returning practitioners who want guided practice, restorative time and a small, supportive group. No advanced yoga experience is required.</p></div><div class="decision-grid"><article><span>01</span><h3>Stay</h3><p>Peaceful, hand-selected private and shared accommodation surrounded by nature.</p></article><article><span>02</span><h3>Travel</h3><p>Arrival windows, nearest transit hubs and local transfer assistance provided.</p></article><span>03</span><h3>Food</h3><p>Nourishing, fresh vegetarian and Sattvic meals crafted with local seasonal produce.</p></article><article><span>04</span><h3>Guidance</h3><p>Small-group teacher ratios with founder-led instruction and attentive care.</p></article></div><div class="retreat-help"><a class="button" href="#retreat-enquiry">Plan your retreat</a><a class="text-link" href="https://wa.me/917977381156?text=Hi%2C%20I%20need%20help%20choosing%20a%20Shikhram%20Yoga%20retreat" target="_blank" rel="noopener">Ask on WhatsApp ↗</a></div></section>
+<section class="detail-band"><div><p class="eyebrow">What every journey includes</p><h2>Everything clear before you <em>commit.</em></h2><p>Every retreat journey is transparent from day one — accommodation, nourishing meals, travel guidance, and dedicated teacher support.</p></div><div class="program-list"><article><h3>Practice and guidance</h3><p>Twice-daily movement, breathwork, meditation and teacher support.</p></article><article><h3>Stay and nourishment</h3><p>Accommodation and meals described clearly by room type and dietary options.</p></article><article><h3>Clear communication</h3><p>Complete itinerary, travel logistics and preparation notes shared in advance.</p></article></div></section>
+
+<section class="enquiry-panel" id="retreat-enquiry">
+  <div>
+    <p class="eyebrow">Retreat enquiry</p>
+    <h2>Plan your <em>journey.</em></h2>
+    <p>Tell us what environment or practice calls to you. We will share upcoming retreat dates, private group options, and complete preparation details.</p>
+    <div class="proposal-trust" style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;font-size:0.75rem;color:var(--muted)">
+      <span>No payment required to enquire</span>
+      <span>Founder-led facilitation</span>
+      <span>Small intimate groups</span>
+    </div>
+  </div>
+  <form data-flow="retreat">
+    <label>Full name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+    <label>Email address<input name="email" type="email" required autocomplete="email" placeholder="you@email.com"></label>
+    <label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel" placeholder="+91 98765 43210"></label>
+    <label>Destination of interest
+      <select name="destination" id="destination-select">
+        <optgroup label="India Sanctuaries">
+          <option value="Rishikesh · Mountain Sanctuary (Uttarakhand)">Rishikesh · Mountain Sanctuary (Uttarakhand)</option>
+          <option value="Himachal Pradesh · Alpine Prana Sanctuary">Himachal Pradesh · Alpine Prana Sanctuary</option>
+          <option value="South Goa · Coastal Breath Sanctuary">South Goa · Coastal Breath Sanctuary</option>
+          <option value="Kerala · Backwater & Ayurvedic Sanctuary">Kerala · Backwater & Ayurvedic Sanctuary</option>
+          <option value="Leh-Ladakh & Pangong Lake · Infinite Space Retreat">Leh-Ladakh & Pangong Lake · Infinite Space Retreat</option>
+          <option value="Sahyadri & Pune · Forest Stillness Sanctuary">Sahyadri & Pune · Forest Stillness Sanctuary</option>
+        </optgroup>
+        <optgroup label="International Journeys">
+          <option value="Bali · Ubud Jungle Dharma Sanctuary">Bali · Ubud Jungle Dharma Sanctuary (Asia)</option>
+          <option value="Nepal · Annapurna Himalayan Summit Retreat">Nepal · Annapurna Himalayan Summit Retreat (Asia)</option>
+          <option value="Thailand & Vietnam · Rainforest Serenity Retreat">Thailand & Vietnam · Rainforest Serenity Retreat (Asia)</option>
+          <option value="Bhutan & Sri Lanka · Sacred Highlands Sanctuary">Bhutan & Sri Lanka · Sacred Highlands Sanctuary (Asia)</option>
+          <option value="Dubai & Oman · Desert Dune & Star Silence">Dubai & Oman · Desert Dune & Star Silence (Middle East)</option>
+          <option value="Maldives & Mauritius · Ocean Solitude Retreat">Maldives & Mauritius · Ocean Solitude Retreat (Islands)</option>
+          <option value="Greece & Portugal · Aegean Light & Coastal Yin">Greece & Portugal · Aegean Light & Coastal Yin (Europe)</option>
+          <option value="Italy & UK · Tuscan Hills & Countryside Solitude">Italy & UK · Tuscan Hills & Countryside Solitude (Europe)</option>
+          <option value="Morocco · Atlas Mountain Kasbah Sanctuary">Morocco · Atlas Mountain Kasbah Sanctuary (Africa)</option>
+        </optgroup>
+        <optgroup label="Custom Journeys">
+          <option value="Bespoke Private / Corporate Retreat">Bespoke Private / Corporate Retreat</option>
+        </optgroup>
+      </select>
+    </label>
+    <label class="full">Questions or travel preferences<textarea name="notes" placeholder="Tell us about your experience level, preferred timing, or any questions..."></textarea></label>
+    <button class="button" type="submit">Request a retreat booking</button>
+  </form>
+</section>
+<footer>
+<div class="footer-brand"><img src="assets/brand/logo-lockup-cream.png" alt="Shikhram Yoga" width="270" height="74" loading="lazy"><p>Yoga beyond the mat. Life beyond the routine.</p></div>
+<div><b>Explore</b><a href="for-you.html">For You</a><a href="teachers.html">Teachers</a><a href="nutrition.html">Nutrition</a><a href="retreats.html">Retreats</a><a href="corporate.html">For Teams</a><a href="partnerships.html">Partnerships</a><a href="shop.html">Shop</a></div>
+<div><b>Connect</b><a href="story.html">Our Story</a><a href="blog.html">Blog</a><a href="sound-healing.html">Sound healing</a><a href="mailto:aniket@shikhramyoga.com">Contact</a><a href="https://wa.me/917977381156?text=Hi%2C%20I%20would%20like%20to%20connect%20with%20Shikhram%20Yoga" target="_blank" rel="noopener">WhatsApp</a></div>
+<div><b>Trust &amp; Safety</b><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="fraud-alert.html">Fraud Alert</a><a href="#lookup" class="lookup-trigger" style="color:#e1ba6b">Check booking status ↗</a></div>
+<div class="newsletter"><b>Notes from the summit</b><p>Seasonal practices, retreat news and thoughtful rituals.</p><form><label class="sr-only" for="footer-email">Email address</label><input id="footer-email" type="email" placeholder="Your email address"><button type="submit" aria-label="Subscribe">→</button></form></div>
+<p class="copyright"><span>© 2026 Shikhram Yoga · Pune, India</span><span class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><span class="sep" aria-hidden="true">·</span><a href="terms-and-conditions.html">Terms &amp; Conditions</a><span class="sep" aria-hidden="true">·</span><a href="fraud-alert.html">Fraud Alert</a></span></p>
+</footer>
+</main>
+
+<script src="script.js?v=20260927"></script><script src="flows.js?v=20260927"></script><script src="sanctuary.js"></script>
+<script>
+// 1-click enquiry pre-selection: click any "Enquire about dates →" button → selects that destination in the form & smooth-scrolls
+document.querySelectorAll('.enquiry-trigger').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    var dest = btn.dataset.destination;
+    var sel = document.getElementById('destination-select');
+    if (sel && dest) {
+      // Try to match by value
+      var found = false;
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value === dest) {
+          sel.selectedIndex = i;
+          found = true;
+          break;
+        }
+      }
+      // Fallback: partial match
+      if (!found) {
+        for (var j = 0; j < sel.options.length; j++) {
+          if (sel.options[j].value.toLowerCase().includes(dest.toLowerCase().split(' ')[0])) {
+            sel.selectedIndex = j;
+            break;
+          }
+        }
+      }
+    }
+    // Smooth scroll handled by href="#retreat-enquiry", no need to preventDefault
+  });
+});
+</script></body></html>

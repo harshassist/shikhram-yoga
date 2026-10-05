@@ -1,0 +1,41 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Catalogue offerings
+    match /offers/{offerId} {
+      // Anyone can read active catalogue items; authenticated owner can read all
+      allow read: if resource.data.active == true || request.auth != null;
+      
+      // Allow customers to increment allocated during booking transaction, or owner to update
+      allow update: if (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['allocated', 'updatedAt']))
+                    || request.auth != null;
+      
+      // Only authenticated owner can create or delete offerings
+      allow create, delete: if request.auth != null;
+    }
+
+    // Customer requests, bookings, retreat reservations and shop orders
+    match /requests/{requestId} {
+      // Any visitor can submit a booking request
+      allow create: if request.resource.data.id == requestId
+                    && request.resource.data.customer.name is string
+                    && request.resource.data.customer.contact is string;
+      
+      // Customer lookup: individual get allowed by exact reference ID; listing requires owner auth
+      allow get: if true;
+      allow list, update, delete: if request.auth != null;
+    }
+
+    // Idempotency tracking to prevent duplicate submissions
+    match /idempotency/{idemKey} {
+      allow create, read: if true;
+      allow update, delete: if false;
+    }
+
+    // Public settings (e.g. verified WhatsApp contact)
+    match /settings/public {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+  }
+}

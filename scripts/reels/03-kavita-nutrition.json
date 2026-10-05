@@ -1,0 +1,64 @@
+{
+  "title": "Kavita - Personalized Nutrition",
+  "brand": "Shikharam Yoga & Nutrition",
+  "voice_id": "hi-IN-SwaraNeural",
+  "rate": "+2%",
+  "pitch": "+0Hz",
+  "ambient_track": "432hz_tibetan_bell",
+  "scenes": [
+    {
+      "id": "scene1",
+      "eyebrow": "UNLOCK A HEALTHIER YOU",
+      "headline": "सेहत का सबसे बड़ा उपहार...",
+      "body": "Personalized diet plans tailored to your specific metabolism and lifestyle.",
+      "spoken_text": "क्या आप भी अपनी सेहत और वज़न को लेकर परेशान हैं? इस साल खुद को अच्छी सेहत का सबसे बड़ा उपहार दीजिए।",
+      "icon": "✦",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene2",
+      "eyebrow": "TAILORED TO YOUR SPECIFIC NEEDS",
+      "headline": "आपकी ज़रूरत, आपकी डाइट",
+      "spoken_text": "हर शरीर अलग है। फैट लॉस, कीटो, वेट गेन, बच्चों का पोषण, और मैटरनिटी डाइट — आपकी ज़रूरतों के अनुसार पूरी तरह कस्टमाइज़्ड।",
+      "cards": [
+        {
+          "num": "01",
+          "title": "Fat Loss & Metabolic Health",
+          "desc": "Keto, Carb Cycling, और सस्टेनेबल वेट मैनेजमेंट बिना किसी भुखमरी के।"
+        },
+        {
+          "num": "02",
+          "title": "Maternity & Child Nutrition",
+          "desc": "गर्भावस्था, पोस्ट-पार्टम रिकवरी और बच्चों के विकास के लिए संतुलित आहार।"
+        },
+        {
+          "num": "03",
+          "title": "Clinical & Medical Conditions",
+          "desc": "थायरॉइड, पीसीओडी, डायबिटीज़ और गट हेल्थ के लिए विशेष डाइट प्लान्स।"
+        }
+      ],
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene3",
+      "eyebrow": "OUR COMPREHENSIVE PACKAGE",
+      "headline": "पूरा सपोर्ट, हर कदम पर",
+      "body": "Diet Counseling · Delicious Healthy Recipes · WhatsApp Support · Weekly Monitoring",
+      "footer_tag": "PLANS START FROM ₹3,000 / MONTH",
+      "spoken_text": "डाइट काउंसलिंग, स्वादिष्ट हेल्दी रेसिपीज़, व्हाट्सएप सपोर्ट, और वीकली मॉनिटरिंग — ताकि आपका रूटीन सच में काम करे।",
+      "pause_after_seconds": 0.5
+    },
+    {
+      "id": "scene4",
+      "eyebrow": "MEET YOUR NUTRITIONIST",
+      "headline": "Kavita",
+      "body": "Sports, Maternity & Child Nutritionist · Shikhram Yoga",
+      "cta_text": "कंसल्टेशन बुक करें →",
+      "footer_url": "shikhramyoga.com/nutrition",
+      "spoken_text": "सर्टिफाइड न्यूट्रिशनिस्ट कविता के साथ आज ही अपनी हेल्थ जर्नी शुरू करें। विज़िट करें शिखराम योगा डॉट कॉम स्लैश न्यूट्रिशन।",
+      "is_finale": true,
+      "logo_image": "kavita-nutritionist.png",
+      "pause_after_seconds": 1.2
+    }
+  ]
+}
